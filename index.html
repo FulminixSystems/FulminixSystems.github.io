@@ -29,35 +29,33 @@
             padding: 40px 20px;
         }
 
+        /* 🖼️ BRANDED FULL-GRAPHIC HEADER CONTAINER */
         header {
             background-image: linear-gradient(rgba(10, 15, 29, 0.4), rgba(10, 15, 29, 0.4)), url('header-bg.jpg');
             background-size: cover;
             background-position: center;
             border: 1px solid var(--border-color);
-            padding: 60px 20px;
+            /* Increased vertical height to cleanly clear space for your graphic's built-in text */
+            padding: 100px 20px 40px 20px; 
             margin-bottom: 20px;
             text-align: center;
             border-radius: 4px;
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
-        }
-
-        h1 {
-            color: #fff;
-            font-size: 36px;
-            letter-spacing: 5px;
-            margin: 0;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 15px rgba(16, 185, 129, 0.4);
-            font-weight: 900;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 180px;
         }
 
         .subtitle {
             color: var(--accent-color);
-            font-size: 13px;
-            margin-top: 12px;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 3px;
             font-weight: bold;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 10px rgba(16, 185, 129, 0.6);
+            margin: 0;
         }
 
         .slogan-divider-system {
@@ -166,8 +164,8 @@
 <body>
 
     <div class="container">
+        <!-- TEXT TITLE DROPPED // SUBTITLE ANCHORED OVER GRAPHIC BASE -->
         <header>
-            <h1>FULMINIX SYSTEMS</h1>
             <div class="subtitle">Bare-Metal Data Transport & Core Ingestion Engines</div>
         </header>
 
