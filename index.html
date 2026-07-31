@@ -29,15 +29,13 @@
             padding: 40px 20px;
         }
 
-        /* 🖼️ BRANDED FULL-GRAPHIC HEADER CONTAINER */
         header {
             background-image: linear-gradient(rgba(10, 15, 29, 0.4), rgba(10, 15, 29, 0.4)), url('header-bg.jpg');
             background-size: cover;
             background-position: center;
             border: 1px solid var(--border-color);
-            /* Increased vertical height to cleanly clear space for your graphic's built-in text */
             padding: 100px 20px 40px 20px; 
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             text-align: center;
             border-radius: 4px;
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
@@ -58,49 +56,113 @@
             margin: 0;
         }
 
-        .slogan-divider-system {
+        /* 🎬 ELECTRIC CIRCUIT SLOGAN ENGINES */
+        .slogan-frame-container {
+            position: relative;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            margin: 35px 0;
-            white-space: nowrap;
-            overflow: hidden;
-            font-size: 14px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: bold;
+            margin: 40px auto;
+            padding: 25px 40px;
+            max-width: 550px;
+            background-color: rgba(11, 24, 43, 0.3);
+            text-align: center;
+            border-radius: 4px;
+            /* Delayed frame glow initialization to synchronize with laser completion */
+            animation: initializeGlowFrame 0.6s ease-out 1.5s forwards;
+            box-sizing: border-box;
         }
 
-        .left-phrase {
+        /* Pure CSS Electric Tracing Circuit Overlays */
+        .slogan-frame-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 4px;
+            padding: 1px; 
+            background: linear-gradient(90deg, transparent, transparent, transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: traceCircuit 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 1.2s forwards;
+        }
+
+        .top-phrase {
             color: #fff;
-            animation: slideInLeft 1.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            opacity: 0;
+            animation: dropDownText 0.8s cubic-bezier(0.1, 0.9, 0.2, 1) 0.2s forwards;
         }
 
         .center-connector {
             color: var(--accent-color);
-            margin: 0 15px;
-            flex-shrink: 0;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin: 4px 0;
+            opacity: 0;
+            animation: fadeInConnector 0.5s ease-out 0.8s forwards;
         }
 
-        .right-phrase {
+        .bottom-phrase {
             color: #fff;
-            animation: slideInRight 1.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 6px;
+            opacity: 0;
+            animation: raceInLeftText 0.8s cubic-bezier(0.1, 0.9, 0.2, 1) 0.5s forwards;
         }
 
-        @keyframes slideInLeft {
-            0% { transform: translateX(-120%); opacity: 0; }
+        /* 📉 KEYFRAME GEOMETRY */
+        @keyframes dropDownText {
+            0% { transform: translateY(-40px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes raceInLeftText {
+            0% { transform: translateX(-100px); opacity: 0; }
             100% { transform: translateX(0); opacity: 1; }
         }
 
-        @keyframes slideInRight {
-            0% { transform: translateX(120%); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
+        @keyframes fadeInConnector {
+            0% { opacity: 0; transform: scale(0.7); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
-        @media (max-width: 700px) {
-            .slogan-divider-system { font-size: 11px; }
-            .center-connector { margin: 0 8px; }
+        @keyframes traceCircuit {
+            0% {
+                background: conic-gradient(from 0deg, var(--accent-color) 0%, transparent 10%);
+            }
+            50% {
+                background: conic-gradient(from 180deg, var(--accent-color) 0%, transparent 40%);
+            }
+            100% {
+                background: conic-gradient(from 360deg, var(--accent-color) 0%, transparent 100%);
+            }
+        }
+
+        @keyframes initializeGlowFrame {
+            0% {
+                border: 1px solid transparent;
+                box-shadow: 0 0 0 rgba(16, 185, 129, 0);
+            }
+            100% {
+                border: 1px solid rgba(16, 185, 129, 0.6);
+                box-shadow: 0 0 15px rgba(16, 185, 129, 0.2), inset 0 0 10px rgba(16, 185, 129, 0.05);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .slogan-frame-container { padding: 20px 25px; max-width: 90%; }
+            .top-phrase, .bottom-phrase { font-size: 12px; letter-spacing: 1px; }
         }
 
         .status-bar {
@@ -151,6 +213,24 @@
             margin-bottom: 10px;
         }
 
+        .secure-contact-box {
+            background-color: var(--card-bg);
+            border: 1px dashed rgba(16, 185, 129, 0.4);
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-channel {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+        
+
         footer {
             margin-top: 60px;
             border-top: 1px solid var(--border-color);
@@ -164,19 +244,19 @@
 <body>
 
     <div class="container">
-        <!-- TEXT TITLE DROPPED // SUBTITLE ANCHORED OVER GRAPHIC BASE -->
         <header>
             <div class="subtitle">Bare-Metal Data Transport & Core Ingestion Engines</div>
         </header>
 
-        <div class="slogan-divider-system">
-            <span class="left-phrase">The Power of Now</span>
-            <span class="center-connector">&lt;--Meets--&gt;</span>
-            <span class="right-phrase">The Legacy of Tomorrow</span>
+        <!-- KINETIC CIRCUIT SLOGAN PLATFORM -->
+        <div class="slogan-frame-container">
+            <div class="top-phrase">The Power of Now</div>
+            <div class="center-connector">&lt;-- Meets --&gt;</div>
+            <div class="bottom-phrase">The Legacy of Tomorrow</div>
         </div>
 
         <div class="status-bar">
-            🟢 FULMINIX CORE: ONLINE // INFRASTRUCTURE SECURED // ARCHITECTURAL INTEGRITY LOCKED
+            🟢 FULMINIX CORE: ONLINE // INGESTION WINDOW STABLE AT 10-45µs // HARDWARE PROTECTIONS ACTIVE
         </div>
 
         <section>
@@ -190,20 +270,20 @@
             <h2>Performance Metrics</h2>
             <div class="grid">
                 <div class="card">
-                    <div class="card-title">⚡ Line-Rate Velocity</div>
-                    <p>Optimized to handle vast data streams across core network routes with absolute minimal system overhead.</p>
+                    <div class="card-title">⚡ Microsecond Ingestion Velocity</div>
+                    <p>Processes critical high-velocity data streams inside active memory registers within a native 10-45 microsecond threshold.</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">🔒 Thread Optimization</div>
-                    <p>Engineered to ensure constant computational stability and balance throughout heavy multi-tier environments.</p>
+                    <div class="card-title">🔒 High-Volume Stream Capacity</div>
+                    <p>Optimized to absorb massive packet volumes concurrently during peak server load spikes without memory degradation or dropouts.</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">🛡️ Boundary Sanitation</div>
-                    <p>Enforces automated validation sequences at the ingestion points to maintain continuous system health.</p>
+                    <div class="card-title">📉 Hardware Footprint Reduction</div>
+                    <p>Maximizes existing bare-metal hardware utility, letting enterprise infrastructure scale handling capacity without compounding operational overhead costs.</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">🧬 Fault Resilience</div>
-                    <p>Built with native mitigation strategies to insulate core infrastructure assets against operational delays.</p>
+                    <div class="card-title">🛡️ Gateway Ingestion Sanitation</div>
+                    <p>Enforces automated, low-overhead boundary evaluation at the doorstep to neutralize malformed payloads before they affect deep system memory.</p>
                 </div>
             </div>
         </section>
@@ -213,8 +293,9 @@
             <p>
                 Fulminix Systems operates exclusively under private architectural staging agreements. To maintain strict security boundaries and protect proprietary engineering models, we do not provide public access to source code repositories, evaluation binaries, or low-level documentation. Strategic configurations are initialized only after identity verification and the execution of a Mutual Non-Disclosure Agreement (NDA).
             </p>
-            <p><strong>Contact Core Desk:</strong> mpratt@fulminixsystems.com</p>
-        </section>
+                    <div class="secure-contact-box">
+            <div class="contact-channel">📥 Contact Secure Core Desk: mpratt@fulminixsystems.com</div>
+        </div>
 
         <footer>
             &copy; 2026 Fulminix Systems Inc. All proprietary corporate rights reserved.
@@ -223,3 +304,4 @@
 
 </body>
 </html>
+
