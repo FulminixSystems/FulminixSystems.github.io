@@ -29,7 +29,6 @@
             padding: 60px 20px;
         }
 
-        /* 🖼️ BRANDED FULL-GRAPHIC HEADER CONTAINER WITH READABILITY SHIELD */
         header {
             background-image: linear-gradient(rgba(10, 15, 29, 0.3), rgba(10, 15, 29, 0.3)), url('header-bg.jpg');
             background-size: cover;
@@ -47,7 +46,6 @@
             min-height: 200px;
         }
 
-        /* Frosted Tech Plate Shielding Typography from Lightning Clash */
         .subtitle {
             color: var(--accent-color);
             font-size: 13px;
@@ -65,7 +63,7 @@
             max-width: 90%;
         }
 
-        /* 🎬 ELECTRIC CIRCUIT SLOGAN ENGINES - SOLID & COLOR SHIFT FINISH */
+        /* 🎬 ELECTRIC CIRCUIT SLOGAN ENGINES - FIXED SOLID EXTENSION */
         .slogan-frame-container {
             position: relative;
             display: flex;
@@ -75,10 +73,11 @@
             margin: 50px auto;
             padding: 30px 50px;
             max-width: 580px;
-            background-color: rgba(11, 24, 43, 0);
             text-align: center;
             border-radius: 4px;
             box-sizing: border-box;
+            background-color: rgba(11, 24, 43, 0);
+            border: 1px solid transparent;
             animation: traceCircuitAndGlow 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
@@ -147,8 +146,9 @@
         }
 
         @keyframes drawFullLoop {
-            0% { background: conic-gradient(from 0deg, var(--accent-color) 0%, transparent 10%); }
-            100% { background: conic-gradient(from 360deg, var(--accent-color) 0%, transparent 100%); }
+            0% { background: conic-gradient(from 0deg, var(--accent-color) 0%, transparent 10%); opacity: 1; }
+            99% { background: conic-gradient(from 360deg, var(--accent-color) 0%, transparent 100%); opacity: 1; }
+            100% { background: none; opacity: 0; }
         }
 
         @keyframes traceCircuitAndGlow {
@@ -157,21 +157,29 @@
                 border: 1px solid transparent;
                 box-shadow: 0 0 0 rgba(16, 185, 129, 0);
             }
-            75% {
+            60% {
                 background-color: rgba(17, 24, 39, 0.4);
+                border: 1px solid transparent;
             }
             100% {
-                background-color: var(--card-bg);
-                border: 1px solid var(--accent-color);
+                background-color: #111827;
+                border: 1px solid #10b981;
                 box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
             }
+        }
+
+        @keyframes shiftToDarkGreen {
+            100% { color: #047857; text-shadow: none; }
+        }
+
+        @keyframes shiftToMetallicGold {
+            100% { color: #dfb15b; text-shadow: 0 0 10px rgba(223, 177, 91, 0.5); }
         }
         @media (max-width: 600px) {
             .slogan-frame-container { padding: 25px 30px; max-width: 90%; }
             .top-phrase, .bottom-phrase { font-size: 12px; letter-spacing: 1px; }
         }
 
-        /* HIGH-TECH TEXT SECTION ALIGNMENTS */
         section {
             margin-bottom: 60px;
         }
@@ -240,11 +248,42 @@
             text-transform: uppercase;
         }
 
+        .tech-label {
+            display: block;
+            font-size: 11px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .cta-header-block {
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+
+        .cta-headline {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .cta-subtext {
+            font-size: 13px;
+            color: #9ca3af;
+            letter-spacing: 1px;
+        }
+
         .secure-contact-box {
             background-color: var(--card-bg);
             border: 1px dashed rgba(16, 185, 129, 0.4);
             padding: 25px;
-            margin-top: 50px;
             border-radius: 4px;
             text-align: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -282,34 +321,74 @@
         </div>
 
         <div class="status-bar">
-            🟢 FULMINIX CORE: ONLINE // INGESTION WINDOW STABLE AT 10-45µs // HARDWARE PROTECTIONS ACTIVE
+            🟢 FULMINIX CORE: ONLINE // INGESTION WINDOW STABLE AT 10-45µs // ARCHITECTURAL INTEGRITY LOCKED
         </div>
 
         <section>
-            <h2>Corporate Overview</h2>
+            <h2>Architectural Overview</h2>
             <p>
-                Fulminix Systems builds custom, low-level data transport solutions engineered for high-throughput enterprise infrastructure. We focus entirely on eliminating pipeline bottlenecks, allowing mission-critical networks to maximize line-rate processing capacity under intense operational pressure.
+                Fulminix Systems engineers high-performance, native application-layer data transport solutions built for mission-critical enterprise environments. We focus entirely on eliminating pipeline bottlenecks, allowing core network fabrics and high-frequency streaming infrastructure to achieve optimal line-rate processing capacity under volatile workload demands.
             </p>
         </section>
 
         <section>
-            <h2>Performance Metrics</h2>
+            <h2>Computational Performance & Efficiency</h2>
             <div class="grid">
                 <div class="card">
-                    <div class="card-title">⚡ Microsecond Ingestion Velocity</div>
-                    <p>Processes critical high-velocity data streams inside active memory registers within a native 10-45 microsecond threshold.</p>
+                    <span class="tech-label">01 // LATENCY INGESTION</span>
+                    <div class="card-title">⚡ Microsecond Velocity</div>
+                    <p><strong>Problem:</strong> Traditional network serialization frameworks and heavy abstraction layers introduce crushing application-level decoding bottlenecks when high-velocity traffic spikes hit core systems.</p>
+                    <p><strong>Solution:</strong> The engine processes mission-critical hardware data streams inside active memory registers within a native 10-45 microsecond threshold, shifting execution straight to the bare metal [USER-CONTEXT].</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">🔒 High-Volume Stream Capacity</div>
-                    <p>Optimized to absorb massive packet volumes concurrently during peak server load spikes without memory degradation or dropouts.</p>
+                    <span class="tech-label">02 // THROUGHPUT RATE</span>
+                    <div class="card-title">🚀 Architectural Outpace</div>
+                    <p><strong>Problem:</strong> Standard serialized data queues hit absolute performance thresholds under multi-gigabit workloads, forcing system resource starvation and degrading downstream services.</p>
+                    <p><strong>Solution:</strong> Delivers an authenticated 50x to 100x execution velocity increase compared to legacy setups, guaranteeing deep corporate logic receive completely un-throttled transport channels.</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">📉 Hardware Footprint Reduction</div>
-                    <p>Maximizes existing bare-metal hardware utility, letting enterprise infrastructure scale handling capacity without compounding operational overhead costs.</p>
+                    <span class="tech-label">03 // CAPACITY OPTIMIZATION</span>
+                    <div class="card-title">📉 Footprint Consolidation</div>
+                    <p><strong>Problem:</strong> Scaling data capacity traditionally requires renting sprawling cloud clusters or massive server rack arrays, ballooning annual operational expenditures (OpEx).</p>
+                    <p><strong>Solution:</strong> Compresses required server hardware capacity and background processing overhead by 70-75%, allowing enterprise networks to multiply throughput while slashing infrastructure footprints.</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">🛡️ Gateway Ingestion Sanitation</div>
-                    <p>Enforces automated, low-overhead boundary evaluation at the doorstep to neutralize malformed payloads before they affect deep system memory.</p>
+                    <span class="tech-label">04 // DATA HANDSHAKE</span>
+                    <div class="card-title">💾 Zero-Loss Retention</div>
+                    <p><strong>Problem:</strong> Volumetric traffic surges trigger packet drop-rates and minor handshake friction, resulting in data leaks, corrupted profiles, and expensive system state desynchronization.</p>
+                    <p><strong>Solution:</strong> Guarantees a flawless 0% memory drop-rate across the entire connection layout, protecting transaction integrity and corporate assets on both ends of the handshake simultaneously [USER-CONTEXT].</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Operational Security & Integration</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="tech-label">05 // INGRESS GUARDRAIL</span>
+                    <div class="card-title">🛡️ Boundary Sanitation</div>
+                    <p><strong>Problem:</strong> Public-facing ingestion points are highly vulnerable to volumetric flood thrashing, malformed packet injection attacks, and malicious memory manipulation.</p>
+                    <p><strong>Solution:</strong> Enforces deterministic edge parsing directly at the socket doorstep, instantly neutralizing malformed payloads on the first clock cycle before they ever trigger memory allocations [USER-CONTEXT].</p>
+                </div>
+                <div class="card">
+                    <span class="tech-label">06 // RUNTIME INSULATION</span>
+                    <div class="card-title">🔐 Insulated FFI Protection</div>
+                    <p><strong>Problem:</strong> Interfacing high-level codebases with native low-level libraries across a Foreign Function Interface routinely introduces critical memory leaks and unstable runtime hazards.</p>
+                    <p><strong>Solution:</strong> Establishes a hardened, isolated boundary layer that locks cross-runtime calls into verified execution spaces, eliminating memory faults and common multi-language interface risks.</p>
+                </div>
+                <div class="card">
+                    <span class="tech-label">07 // FAULT TOLERANCE</span>
+                    <div class="card-title">🔒 Fault Insulation</div>
+                    <p><strong>Problem:</strong> Sudden network drops, unhandled data lane exceptions, or individual thread panics normally chain into systemic backpressure loops or catastrophic global server crashes.</p>
+                    <p><strong>Solution:</strong> Integrates advanced, asynchronous real-time tracking that catches and zeroes data corruption anomalies cleanly at the lane boundary, ensuring 100% operational uptime for the primary fabric [USER-CONTEXT].</p>
+                    <p><strong>Problem:</strong> Deploying infrastructure patches or upgrading data architectures forces massive corporate networks to endure expensive host service downtime and cluster recycling loops.</p>
+                    <p><strong>Solution:</strong> Engineered with a hot-swappable, in-line insertion blueprint that plugs directly into live production environments, requiring absolutely zero network resets or operational stoppages.</p>
+                </div>
+                <div class="card" style="grid-column: span 2;">
+                    <span class="tech-label">09 // AVAILABILITY FABRIC</span>
+                    <div class="card-title">👑 Five-Nines Uptime Reliability</div>
+                    <p><strong>Problem:</strong> Traditional infrastructure layers suffer from micro-stutters, race conditions, and minor resource leakage that degrade operational availability over time, causing costly out-of-service intervals and failing to hit strict corporate Service Level Agreements (SLAs).</p>
+                    <p><strong>Solution:</strong> Enforces an absolute 99.999% runtime availability standard natively within the data backbone [GOOGLE]. By handling data streams directly on the wire without garbage collection freezes or thread blockages, the system delivers continuous operational invariance under maximum production loads.</p>
                 </div>
             </div>
         </section>
@@ -317,16 +396,19 @@
         <section>
             <h2>Enterprise Sandbox Engagement</h2>
             <p>
-                Fulminix Systems operates exclusively under private architectural staging agreements. To maintain strict security boundaries and protect proprietary engineering models, we do not provide public access to source code repositories, evaluation binaries, or low-level documentation. Strategic configurations are initialized only after identity verification and the execution of a Mutual Non-Disclosure Agreement (NDA).
+                Fulminix Systems operates exclusively under private architectural staging agreements. To maintain strict security boundaries and protect proprietary engineering models, we do not provide public access to source code repositories, evaluation binaries, or low-level documentation. Strategic configurations are initialized only after identity verification and the execution of a Mutual Non-Disclosure Agreement (NDA) [USER-CONTEXT].
             </p>
         </section>
+
+        <div class="cta-header-block">
+            <div class="cta-headline">Don't hesitate. Get the system with a spine.</div>
+            <div class="cta-subtext">Elevate your core network transport capacity beyond legacy constraints.</div>
+        </div>
 
         <div class="secure-contact-box">
             <div class="contact-channel">📥 Contact Secure Core Desk: mpratt@fulminixsystems.com</div>
         </div>
 
-        <div class="tech-footer-divider"></div>        
-        
         <footer>
             &copy; 2026 Fulminix Systems Inc. All proprietary corporate rights reserved.
         </footer>
@@ -334,11 +416,6 @@
 
 </body>
 </html>
-
-        @keyframes shiftToDarkGreen {
-            100% { color: #047857; text-shadow: none; }
-        }
-
-        @keyframes shiftToMetallicGold {
-            100% { color: #dfb15b; text-shadow: 0 0 10px rgba(223, 177, 91, 0.5); }
-        }
+                <div class="card">
+                    <span class="tech-label">08 // HOT SWAP PLUG-IN</span>
+                    <div class="card-title">🧬 Live Integration</div>
