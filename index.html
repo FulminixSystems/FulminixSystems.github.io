@@ -8,7 +8,8 @@
         :root {
             --bg-color: #0a0f1d;
             --text-color: #d1d5db;
-            --accent-color: #10b981;
+            --accent-blue: #2563eb;
+            --lightning-glow: #3b82f6;
             --border-color: #1f2937;
             --card-bg: #111827;
         }
@@ -47,7 +48,7 @@
         }
 
         .subtitle {
-            color: var(--accent-color);
+            color: #fff;
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 4px;
@@ -57,12 +58,13 @@
             -webkit-backdrop-filter: blur(8px);
             padding: 14px 24px;
             border-radius: 30px;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(37, 99, 235, 0.2);
             margin: 0;
             max-width: 90%;
         }
 
+        /* 🎬 SAPPHIRE CIRCUIT SLOGAN FRAME */
         .slogan-frame-container {
             position: relative;
             display: flex;
@@ -103,11 +105,11 @@
             margin-bottom: 8px;
             opacity: 0;
             animation: dropDownText 0.8s cubic-bezier(0.1, 0.9, 0.2, 1) 0.2s forwards,
-                       shiftToDarkGreen 0.5s ease-out 1.5s forwards;
+                       shiftToDarkBlue 0.5s ease-out 1.5s forwards;
         }
 
         .center-connector {
-            color: var(--accent-color);
+            color: var(--lightning-glow);
             font-size: 13px;
             font-weight: bold;
             letter-spacing: 2px;
@@ -126,7 +128,7 @@
             margin-top: 8px;
             opacity: 0;
             animation: raceInLeftText 0.8s cubic-bezier(0.1, 0.9, 0.2, 1) 0.5s forwards,
-                       shiftToDarkGreen 0.5s ease-out 1.5s forwards;
+                       shiftToDarkBlue 0.5s ease-out 1.5s forwards;
         }
 
         @keyframes dropDownText {
@@ -145,38 +147,36 @@
         }
 
         @keyframes drawFullLoop {
-            0% { background: conic-gradient(from 0deg, var(--accent-color) 0%, transparent 10%); opacity: 1; }
-            99% { background: conic-gradient(from 360deg, var(--accent-color) 0%, transparent 100%); opacity: 1; }
+            0% { background: conic-gradient(from 0deg, var(--accent-blue) 0%, transparent 10%); opacity: 1; }
+            99% { background: conic-gradient(from 360deg, var(--accent-blue) 0%, transparent 100%); opacity: 1; }
             100% { background: none; opacity: 0; }
         }
 
         @keyframes traceCircuitAndGlow {
-            0% { background-color: rgba(11, 24, 43, 0); border: 1px solid transparent; box-shadow: 0 0 0 rgba(16, 185, 129, 0); }
+            0% { background-color: rgba(11, 24, 43, 0); border: 1px solid transparent; box-shadow: 0 0 0 rgba(37, 99, 235, 0); }
             60% { background-color: rgba(17, 24, 39, 0.4); border: 1px solid transparent; }
-            100% { background-color: #111827; border: 1px solid #10b981; box-shadow: 0 0 20px rgba(16, 185, 129, 0.25); }
+            100% { background-color: #111827; border: 1px solid var(--accent-blue); box-shadow: 0 0 20px rgba(37, 99, 235, 0.25); }
         }
 
-        @keyframes shiftToDarkGreen { 100% { color: #047857; text-shadow: none; } }
+        @keyframes shiftToDarkBlue { 100% { color: #1e3a8a; text-shadow: none; } }
         @keyframes shiftToMetallicGold { 100% { color: #dfb15b; text-shadow: 0 0 10px rgba(223, 177, 91, 0.5); } }
         @media (max-width: 600px) {
             .slogan-frame-container { padding: 25px 30px; max-width: 90%; width: 100%; }
             .top-phrase, .bottom-phrase { font-size: 12px; letter-spacing: 1px; }
         }
 
-        section {
-            margin-bottom: 60px;
-        }
+        section { margin-bottom: 60px; }
 
         .status-bar {
-            background-color: rgba(16, 185, 129, 0.04);
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
+            background-color: rgba(37, 99, 235, 0.04);
+            border: 1px solid var(--accent-blue);
+            color: var(--lightning-glow);
             padding: 14px 20px;
             font-size: 13px;
             margin-bottom: 60px;
             border-radius: 4px;
             letter-spacing: 1px;
-            box-shadow: inset 0 0 10px rgba(16, 185, 129, 0.05);
+            box-shadow: inset 0 0 10px rgba(37, 99, 235, 0.05);
         }
 
         h2 {
@@ -184,246 +184,110 @@
             font-size: 20px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            border-left: 4px solid var(--accent-color);
+            border-left: 4px solid var(--accent-blue);
             padding-left: 15px;
             margin-top: 0;
             margin-bottom: 24px;
         }
 
-        p {
-            font-size: 14px;
-            color: #9ca3af;
-            text-align: justify;
-            margin-bottom: 20px;
-        }
+        p { font-size: 14px; color: #9ca3af; text-align: justify; margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+        .full-width-stack { display: flex; flex-direction: column; gap: 30px; margin-top: 30px; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; gap: 20px; } }
 
-        .full-width-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; gap: 20px; }
-        }
-
-        /* ⚡ INTERACTIVE PLASMA CARDS WITH SURGE DETECTOR OVERLAYS */
-        details.card {
+        /* ⚡ ERRATIC JAGGED LIGHTNING COMPONENT MODULES WITH AUTO-FADE LIFECYCLE */
+        .card-wrapper {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 25px;
             border-radius: 4px;
+            position: relative;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .card-header-trigger {
+            padding: 25px;
             cursor: pointer;
-            display: block;
             position: relative;
-            overflow: hidden;
+            user-select: none;
         }
 
-        details.card[open] {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
-        }
-
-        summary {
-            list-style: none;
-            outline: none;
-            position: relative;
-        }
-
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        /* ⚡ FULMINIX PLASMA DISCHARGE DIVIDER */
-        summary::after {
-            content: '';
+        /* Lightning Canvas Shell Overlay */
+        .lightning-bolt-track {
             position: absolute;
-            bottom: -12px;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 2px;
-            background: #1f2937;
-            transition: all 0.3s ease;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.25s ease-out;
         }
 
-        details.card[open] summary::after {
-            background: linear-gradient(90deg, transparent, #ffffff, var(--accent-color), #ffffff, transparent);
-            box-shadow: 0 0 12px #10b981, 0 0 4px #ffffff;
-            animation: lightningDance 0.3s linear infinite;
+        .card-title-row { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 3; }
+        .card-title { color: #fff; font-weight: bold; font-size: 15px; letter-spacing: 1px; text-transform: uppercase; margin: 0; }
+        .expand-indicator { color: var(--lightning-glow); font-size: 12px; font-weight: bold; font-family: monospace; transition: all 0.3s ease; }
+
+        .card-wrapper.active-frame .expand-indicator {
+            transform: rotate(90deg);
+            color: #fff;
+            text-shadow: 0 0 8px var(--lightning-glow);
         }
 
-        @keyframes lightningDance {
-            0% { transform: scaleY(1) translateY(0); filter: hue-rotate(0deg); opacity: 0.9; }
-            50% { transform: scaleY(2.5) translateY(-1px) skewX(20deg); filter: hue-rotate(30deg); opacity: 1; }
-            100% { transform: scaleY(1) translateY(0); filter: hue-rotate(0deg); opacity: 0.9; }
+        /* Fade and return back to normal box style configurations seamlessly */
+        .card-wrapper.active-frame {
+            border-color: var(--border-color);
         }
 
-        /* ⚡ OVERDRIVE GLOW DISCHARGE FLASH */
-        details.card::before {
+        .card-wrapper::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(16, 185, 129, 0);
+            background: rgba(255, 255, 255, 0);
             pointer-events: none;
-            z-index: 2;
-            transition: background 0.4s ease;
+            z-index: 5;
+            border-radius: 4px;
         }
 
-        details.card[open].trigger-flash::before {
-            animation: lightningDischargeFlash 0.5s ease-out;
+        .card-wrapper.discharge-pulse::before {
+            animation: voltageDischarge 0.35s cubic-bezier(0.1, 0.8, 0.3, 1);
         }
 
-        @keyframes lightningDischargeFlash {
-            0% { background: rgba(255, 255, 255, 0.35); filter: blur(4px); }
-            15% { background: rgba(16, 185, 129, 0.25); }
-            100% { background: rgba(16, 185, 129, 0); }
-        }
-
-        .card-title-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .card-title {
-            color: #fff;
-            font-weight: bold;
-            font-size: 15px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        .expand-indicator {
-            color: var(--accent-color);
-            font-size: 12px;
-            font-weight: bold;
-            font-family: monospace;
-            transition: all 0.3s ease;
-        }
-
-        details[open] .expand-indicator {
-            transform: rotate(90deg);
-            color: #fff;
-            text-shadow: 0 0 8px #10b981;
+        @keyframes voltageDischarge {
+            0% { background: rgba(255, 255, 255, 0.35); filter: blur(2px); }
+            30% { background: rgba(37, 99, 235, 0.15); }
+            100% { background: rgba(37, 99, 235, 0); }
         }
 
         .card-content-panel {
-            margin-top: 25px;
+            padding: 0 25px 25px 25px;
+            display: none;
+            border-top: 1px dashed var(--border-color);
+            margin-top: 5px;
             padding-top: 20px;
-            cursor: default;
         }
 
-        .tech-label {
-            display: block;
-            font-size: 11px;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
+        .tech-label { display: block; font-size: 11px; color: var(--lightning-glow); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: bold; position: relative; z-index: 3; }
 
-        /* 📊 BARE-METAL TELEMETRY INTERACTIVE CONTROL CONSOLES */
-        .emulator-terminal {
-            background-color: #060b13;
-            border: 1px solid #1f2937;
-            border-radius: 4px;
-            padding: 20px;
-            margin-top: 20px;
-            font-family: monospace;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
-        }
-
-        .emulator-header {
-            color: #4b5563;
-            font-size: 11px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #1f2937;
-            padding-bottom: 6px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .workload-slider-wrapper {
-            margin: 20px 0;
-            background: #111827;
-            padding: 15px;
-            border-radius: 4px;
-            border: 1px solid #1f2937;
-        }
-
-        .slider-label-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: #9ca3af;
-            margin-bottom: 8px;
-        }
-
-        .metrics-output-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .metric-telemetry-box {
-            background: #0d1527;
-            border: 1px solid #1f2937;
-            padding: 10px;
-            border-radius: 2px;
-            text-align: center;
-        }
-
-        .telemetry-val {
-            color: var(--accent-color);
-            font-size: 14px;
-            font-weight: bold;
-            text-shadow: 0 0 6px rgba(16,185,129,0.3);
-        }
-
-        .telemetry-lbl {
-            font-size: 10px;
-            color: #4b5563;
-            text-transform: uppercase;
-            margin-top: 4px;
-        }
-
-        .workload-range-input {
-            width: 100%;
-            -webkit-appearance: none;
-            background: #1f2937;
-            height: 4px;
-            border-radius: 2px;
-            outline: none;
-        }
-
-        .workload-range-input::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--accent-color);
-            cursor: pointer;
-            box-shadow: 0 0 8px var(--accent-color);
-        }
+        /* 📊 ZONE 3.5 PERMANENT RECOUP TELEMETRY ANCHOR */
+        .emulator-terminal { background-color: #060b13; border: 1px solid #1f2937; border-radius: 4px; padding: 20px; margin: 40px auto 60px auto; font-family: monospace; box-shadow: inset 0 0 15px rgba(0,0,0,0.8); }
+        .emulator-header { color: #4b5563; font-size: 11px; text-transform: uppercase; margin-bottom: 15px; border-bottom: 1px solid #1f2937; padding-bottom: 6px; display: flex; justify-content: space-between; }
+        .workload-slider-wrapper { margin: 20px 0; background: #111827; padding: 15px; border-radius: 4px; border: 1px solid #1f2937; }
+        .slider-label-row { display: flex; justify-content: space-between; font-size: 12px; color: #9ca3af; margin-bottom: 8px; }
+        .metrics-output-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px; }
+        .metric-telemetry-box { background: #0d1527; border: 1px solid #1f2937; padding: 10px; border-radius: 2px; text-align: center; }
+        .telemetry-val { color: var(--lightning-glow); font-size: 14px; font-weight: bold; text-shadow: 0 0 6px rgba(37,99,235,0.3); }
+        .telemetry-lbl { font-size: 10px; color: #4b5563; text-transform: uppercase; margin-top: 4px; }
+        .workload-range-input { width: 100%; -webkit-appearance: none; background: #1f2937; height: 4px; border-radius: 2px; outline: none; }
+        .workload-range-input::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: var(--lightning-glow); cursor: pointer; box-shadow: 0 0 8px var(--lightning-glow); }
 
         .cta-header-block { text-align: center; margin-top: 60px; margin-bottom: 20px; }
-        .cta-headline { color: #fff; font-size: 22px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; text-shadow: 0 0 10px rgba(16, 185, 129, 0.3); }
+        .cta-headline { color: #fff; font-size: 22px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; text-shadow: 0 0 10px rgba(37, 99, 235, 0.3); }
         .cta-subtext { font-size: 13px; color: #9ca3af; letter-spacing: 1px; }
-        .secure-contact-box { background-color: var(--card-bg); border: 1px dashed rgba(16, 185, 129, 0.4); padding: 25px; border-radius: 4px; text-align: center; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); }
-        .contact-channel { color: var(--accent-color); font-weight: bold; font-size: 15px; letter-spacing: 1px; }
+        .secure-contact-box { background-color: var(--card-bg); border: 1px dashed rgba(37, 99, 235, 0.4); padding: 25px; border-radius: 4px; text-align: center; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); }
+        .contact-channel { color: var(--lightning-glow); font-weight: bold; font-size: 15px; letter-spacing: 1px; }
         footer { margin-top: 80px; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 12px; color: #4b5563; text-align: center; letter-spacing: 1px; }
 
         @media (max-width: 600px) {
@@ -434,7 +298,7 @@
             .top-phrase, .bottom-phrase { font-size: 11px; letter-spacing: 1px; }
             .status-bar { font-size: 11px; padding: 12px; margin-bottom: 40px; line-height: 1.5; white-space: normal; word-break: break-word; }
             .grid { grid-template-columns: 1fr; gap: 20px; }
-            details.card { padding: 18px 15px; }
+            .card-header-trigger { padding: 18px 15px; }
             .card-title { font-size: 13px; }
             .metrics-output-row { grid-template-columns: 1fr; gap: 10px; }
             .cta-headline { font-size: 16px; letter-spacing: 1px; line-height: 1.4; }
@@ -454,7 +318,7 @@
         </div>
 
         <div class="status-bar">
-            🟢 FULMINIX CORE: ONLINE // INGESTION WINDOW STABLE AT 10-45µs // ARCHITECTURAL INTEGRITY LOCKED
+            ⚡ FULMINIX CORE: ONLINE // INGESTION WINDOW STABLE AT 10-45µs // HIGH-VOLTAGE HARMONICS ACTIVE
         </div>
 
         <section>
@@ -463,160 +327,168 @@
                 Fulminix Systems engineers high-performance, native application-layer data transport solutions built for mission-critical enterprise environments. We focus entirely on eliminating pipeline bottlenecks, allowing core network fabrics and high-frequency streaming infrastructure to achieve optimal line-rate processing capacity under volatile workload demands.
             </p>
         </section>
-
         <!-- ZONE 2: COMPUTATIONAL PERFORMANCE CRITERIA (COLLAPSIBLE) -->
         <section>
             <h2>Computational Performance Criteria</h2>
             <div class="grid">
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">01 // LATENCY INGESTION</span>
                         <div class="card-title-row">
                             <div class="card-title">⚡ Microsecond Velocity</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> Traditional network serialization frameworks and heavy abstraction layers introduce crushing application-level decoding bottlenecks when high-velocity traffic spikes hit core systems.</p>
-                        <p><strong>Solution:</strong> The engine processes mission-critical hardware data streams inside active memory registers within a native 10-45 microsecond threshold, shifting execution straight to the bare metal [1].</p>
+                        <p><strong>Solution:</strong> The engine processes mission-critical hardware data streams inside active memory registers within a native 10-45 microsecond threshold, shifting execution straight to the bare metal [USER-CONTEXT].</p>
                     </div>
-                </details>
+                </div>
 
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">02 // THROUGHPUT RATE</span>
                         <div class="card-title-row">
                             <div class="card-title">🚀 Architectural Outpace</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> Standard serialized data queues hit absolute performance thresholds under multi-gigabit workloads, forcing system resource starvation and degrading downstream services.</p>
                         <p><strong>Solution:</strong> Delivers an authenticated 50x to 100x execution velocity increase compared to legacy setups, guaranteeing deep corporate logic receive completely un-throttled transport channels.</p>
                     </div>
-                </details>
+                </div>
             </div>
         </section>
 
-        <!-- ZONE 3: RUNTIME SECURITY & INSULATION DECK (COLLAPSIBLE) -->
+        <!-- ZONE 3: OPERATIONAL SECURITY & INSULATION (COLLAPSIBLE) -->
         <section>
             <h2>Operational Security & Insulation</h2>
             <div class="grid">
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">03 // INGRESS GUARDRAIL</span>
                         <div class="card-title-row">
                             <div class="card-title">🛡️ Boundary Sanitation</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> Public-facing ingestion points are highly vulnerable to volumetric flood thrashing, malformed packet injection attacks, and malicious memory manipulation.</p>
-                        <p><strong>Solution:</strong> Enforces deterministic edge parsing directly at the socket doorstep, instantly neutralizing malformed payloads on the first clock cycle before they ever trigger memory allocations [1].</p>
+                        <p><strong>Solution:</strong> Enforces deterministic edge parsing directly at the socket doorstep, instantly neutralizing malformed payloads on the first clock cycle before they ever trigger memory allocations [USER-CONTEXT].</p>
                     </div>
-                </details>
+                </div>
 
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">04 // RUNTIME INSULATION</span>
                         <div class="card-title-row">
                             <div class="card-title">🔐 Insulated FFI Protection</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> Interfacing high-level codebases with native low-level libraries across a Foreign Function Interface routinely introduces critical memory leaks and unstable runtime hazards.</p>
                         <p><strong>Solution:</strong> Establishes a hardened, isolated boundary layer that locks cross-runtime calls into verified execution spaces, eliminating memory faults and common multi-language interface risks.</p>
                     </div>
-                </details>
+                </div>
 
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">05 // FAULT TOLERANCE</span>
                         <div class="card-title-row">
                             <div class="card-title">🔒 Fault Insulation</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> Sudden network drops, unhandled data lane exceptions, or individual thread panics normally chain into systemic backpressure loops or catastrophic global server crashes.</p>
-                        <p><strong>Solution:</strong> Integrates advanced, asynchronous real-time tracking that catches and zeroes data corruption anomalies cleanly at the lane boundary, ensuring 100% operational uptime for the primary fabric [1].</p>
+                        <p><strong>Solution:</strong> Integrates advanced, asynchronous real-time tracking that catches and zeroes data corruption anomalies cleanly at the lane boundary, ensuring 100% operational uptime for the primary fabric [USER-CONTEXT].</p>
                     </div>
-                </details>
+                </div>
 
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">06 // HOT SWAP PLUG-IN</span>
                         <div class="card-title-row">
                             <div class="card-title">🧬 Live Integration</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> Deploying infrastructure patches or upgrading data architectures forces massive corporate networks to endure expensive host service downtime and cluster recycling loops.</p>
                         <p><strong>Solution:</strong> Engineered with a hot-swappable, in-line insertion blueprint that plugs directly into live production environments, requiring absolutely zero network resets or operational stoppages.</p>
                     </div>
-                </details>
+                </div>
             </div>
         </section>
-        <!-- ZONE 4: HARDWARE ENGINEERING & OPTIMIZATION CRITERIA -->
+
+        <!-- 📊 ACTIVE DIVIDING TELEMETRY LEDGER BRIDGE -->
+        <div class="emulator-terminal">
+            <div class="emulator-header">
+                <span>⚡ FULMINIX HARMONIC COMPRESSION ANALYZER</span>
+                <span>STATUS: HARDWARE EMBED ON-LINE</span>
+            </div>
+            <div class="workload-slider-wrapper">
+                <div class="slider-label-row">
+                    <span>TARGET DEMAND STREAM SCALE:</span>
+                    <span id="slider-txt-val" style="color: var(--lightning-glow); font-weight: bold;">10 Gbps LINE-RATE</span>
+                </div>
+                <input type="range" min="10" max="100" value="10" class="workload-range-input" oninput="recalculateTelemetry(this.value)">
+            </div>
+            <div class="metrics-output-row">
+                <div class="metric-telemetry-box">
+                    <div class="telemetry-val" id="t-lat">11.4 µs</div>
+                    <div class="telemetry-lbl">REGISTRATION WINDOW</div>
+                </div>
+                <div class="metric-telemetry-box">
+                    <div class="telemetry-val" id="t-ft">71.2 %</div>
+                    <div class="telemetry-lbl">HARDWARE CONSOLIDATION</div>
+                </div>
+                <div class="metric-telemetry-box">
+                    <div class="telemetry-val" id="t-drop" style="color: var(--accent-blue);">0.0000 %</div>
+                    <div class="telemetry-lbl">PACKET RETENTION RATE</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ZONE 4: HARDWARE ENGINEERING & RESOURCE OPTIMIZATION (COLLAPSIBLE) -->
         <section>
             <h2>Hardware Engineering & Resource Optimization</h2>
             <div class="grid">
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">07 // CAPACITY OPTIMIZATION</span>
                         <div class="card-title-row">
                             <div class="card-title">📉 Footprint Consolidation</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> Scaling data capacity traditionally requires renting sprawling cloud clusters or massive server rack arrays, ballooning annual operational expenditures (OpEx).</p>
                         <p><strong>Solution:</strong> Compresses required server hardware capacity and background processing overhead by 70-75%, allowing enterprise networks to multiply throughput while slashing infrastructure footprints.</p>
                     </div>
-                </details>
+                </div>
 
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">08 // MEMORY ALLOCATION</span>
                         <div class="card-title-row">
                             <div class="card-title">⚙️ Hardened Allocation Architecture</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> Surges in dynamic request volumes trigger memory fragment bottlenecks inside standard operating system heap allocators, inducing system stutter and latency drops.</p>
-                        <p><strong>Solution:</strong> Hooks natively into an integrated Microsoft mimalloc hub to enforce secure thread isolation limits and achieve ultra-stable performance scaling across bare-metal environments [1].</p>
-                    </div>
-                </details>
-            </div>
-
-            <!-- LIVE TELEMETRY EMULATOR DEVICE -->
-            <div class="emulator-terminal">
-                <div class="emulator-header">
-                    <span>⚡ FULMINIX HARMONIC COMPRESSION ANALYZER</span>
-                    <span>STATUS: ACTIVE TELEMETRY</span>
-                </div>
-                <div class="workload-slider-wrapper">
-                    <div class="slider-label-row">
-                        <span>TARGET DEMAND STREAM SCALE:</span>
-                        <span id="slider-txt-val" style="color: #10b981; font-weight: bold;">10 Gbps LINE-RATE</span>
-                    </div>
-                    <input type="range" min="10" max="100" value="10" class="workload-range-input" oninput="recalculateTelemetry(this.value)">
-                </div>
-                <div class="metrics-output-row">
-                    <div class="metric-telemetry-box">
-                        <div class="telemetry-val" id="t-lat">11.4 µs</div>
-                        <div class="telemetry-lbl">REGISTRATION WINDOW</div>
-                    </div>
-                    <div class="metric-telemetry-box">
-                        <div class="telemetry-val" id="t-ft">71.2 %</div>
-                        <div class="telemetry-lbl">HARDWARE CONSOLIDATION</div>
-                    </div>
-                    <div class="metric-telemetry-box">
-                        <div class="telemetry-val" id="t-drop" style="color: #10b981;">0.0000 %</div>
-                        <div class="telemetry-lbl">PACKET RETENTION RATE</div>
+                        <p><strong>Solution:</strong> Hooks natively into an integrated Microsoft mimalloc hub to enforce secure thread isolation limits and achieve ultra-stable performance scaling across bare-metal environments [USER-CONTEXT].</p>
                     </div>
                 </div>
             </div>
@@ -625,68 +497,72 @@
         <section>
             <h2>High-Availability Fabric & Compliance</h2>
             <div class="full-width-stack">
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">09 // UPTIME GUARANTEE</span>
                         <div class="card-title-row">
                             <div class="card-title">👑 Five-Nines Uptime Reliability</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> Traditional infrastructure layers encounter structural trace desyncs and gradual memory drift, violating rigorous corporate Service Level Agreements (SLAs).</p>
-                        <p><strong>Solution:</strong> Enforces an absolute 99.999% processing availability parameter, absorbing volatile load drops without structural stutter periods [1].</p>
+                        <p><strong>Solution:</strong> Enforces an absolute 99.999% processing availability parameter, absorbing volatile load drops without structural stutter periods [GOOGLE].</p>
                     </div>
-                </details>
+                </div>
 
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">10 // ENVIRONMENT MATCH</span>
                         <div class="card-title-row">
                             <div class="card-title">🏛️ Cryptographic Compliance & Target Environments</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> Legacy frameworks fail to integrate smoothly across strict corporate environments, introducing auditing friction and deployment obstacles.</p>
                         <p><strong>Solution:</strong> Compiles natively into standalone binary assets optimized for Windows Server kernels and RHEL clusters, incorporating immediate cryptographic zeroization routines.</p>
                     </div>
-                </details>
+                </div>
 
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">11 // OBSERVABILITY FABRIC</span>
                         <div class="card-title-row">
                             <div class="card-title">📊 Automated Performance Telemetry Channels</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> High-velocity applications operate as unmonitored tracking blocks, preventing network technicians from diagnosing hidden path choke points.</p>
                         <p><strong>Solution:</strong> Integrates dedicated telemetry pathways that stream performance tracking diagnostics straight to analytics frameworks without adding core thread blocking.</p>
                     </div>
-                </details>
+                </div>
 
-                <details class="card" onclick="triggerLightningFlash(this)">
-                    <summary>
+                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
+                        <div class="lightning-bolt-track"></div>
                         <span class="tech-label">12 // BOUNDARY RULES</span>
                         <div class="card-title-row">
                             <div class="card-title">📜 Architectural Governance & Implementation Limits</div>
                             <div class="expand-indicator">[+]</div>
                         </div>
-                    </summary>
+                    </div>
                     <div class="card-content-panel">
                         <p><strong>Problem:</strong> Enterprise platforms are constantly exposed to unexpected software overhead and open-ended modification cycles from third-party vendor platforms.</p>
                         <p><strong>Solution:</strong> Restricts interaction exclusively to hardware-locked compiled payloads, ensuring rigid operational scope boundaries and absolute design protection.</p>
                     </div>
-                </details>
+                </div>
             </div>
         </section>
 
         <section>
             <h2>Enterprise Sandbox Engagement</h2>
             <p>
-                Fulminix Systems operates exclusively under private architectural staging agreements. To maintain strict security boundaries and protect proprietary engineering models, we do not provide public access to source code repositories, evaluation binaries, or low-level documentation. Strategic configurations are initialized only after identity verification and the execution of a Mutual Non-Disclosure Agreement (NDA).
+                Fulminix Systems operates exclusively under private architectural staging agreements. To maintain strict security boundaries and protect proprietary engineering models, we do not provide public access to source code repositories, evaluation binaries, or low-level documentation. Strategic configurations are initialized only after identity verification and the execution of a Mutual Non-Disclosure Agreement (NDA) [USER-CONTEXT].
             </p>
         </section>
 
@@ -705,11 +581,70 @@
     </div>
 
     <script>
-        function triggerLightningFlash(element) {
-            element.classList.add('trigger-flash');
+        function runBorderArc(wrapperElement) {
+            if (wrapperElement.classList.contains('active-frame')) return;
+            const trigger = wrapperElement.querySelector('.card-header-trigger');
+            const boltTrack = trigger.querySelector('.lightning-bolt-track');
+            const width = trigger.offsetWidth;
+            const height = trigger.offsetHeight;
+            
+            let svgMarkup = `<svg viewBox="0 0 ${width} ${height}" style="position:absolute; inset:0; width:100%; height:100%;">
+                <rect x="1" y="1" width="${width-2}" height="${height-2}" fill="none" 
+                      stroke="var(--accent-blue)" stroke-width="2.5" 
+                      style="filter: drop-shadow(0 0 5px var(--lightning-glow)); opacity: 0.75;" />
+            </svg>`;
+            
+            boltTrack.innerHTML = svgMarkup;
+            boltTrack.style.opacity = '1';
+        }
+
+        function clearBorderArc(wrapperElement) {
+            if (wrapperElement.classList.contains('active-frame')) return;
+            const boltTrack = wrapperElement.querySelector('.lightning-bolt-track');
+            boltTrack.style.opacity = '0';
+        }
+
+        function strikeLightningAndToggle(triggerElement) {
+            const wrapper = triggerElement.closest('.card-wrapper');
+            const contentPanel = wrapper.querySelector('.card-content-panel');
+            const boltTrack = triggerElement.querySelector('.lightning-bolt-track');
+            const isOpen = wrapper.classList.contains('active-frame');
+            const width = triggerElement.offsetWidth;
+            const height = triggerElement.offsetHeight;
+
+            let svgMarkup = `<svg viewBox="0 0 ${width} ${height}" style="position:absolute; inset:0; width:100%; height:100%;">`;
+            for (let pathNum = 0; pathNum < 2; pathNum++) {
+                let currentX = 15;
+                let currentY = height / 2;
+                svgMarkup += `<path d="M ${currentX} ${currentY} `;
+                
+                while (currentX < width - 15) {
+                    currentX += Math.floor(Math.random() * 20) + 12;
+                    currentY = (height / 2) + (Math.floor(Math.random() * 26) - 13);
+                    svgMarkup += `L ${currentX} ${currentY} `;
+                }
+                svgMarkup += `" stroke="${pathNum === 0 ? '#ffffff' : 'var(--accent-blue)'}" 
+                               stroke-width="${pathNum === 0 ? '1.5' : '4.5'}" fill="none" 
+                               style="filter: drop-shadow(0 0 8px var(--lightning-glow));" />`;
+            }
+            svgMarkup += '</svg>';
+            
+            boltTrack.innerHTML = svgMarkup;
+            boltTrack.style.opacity = '1';
+            wrapper.classList.add('discharge-pulse');
+
             setTimeout(() => {
-                element.classList.remove('trigger-flash');
-            }, 500);
+                boltTrack.style.opacity = '0';
+                wrapper.classList.remove('discharge-pulse');
+                
+                if (isOpen) {
+                    wrapper.classList.remove('active-frame');
+                    contentPanel.style.display = 'none';
+                } else {
+                    wrapper.classList.add('active-frame');
+                    contentPanel.style.display = 'block';
+                }
+            }, 250);
         }
 
         function recalculateTelemetry(val) {
