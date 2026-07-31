@@ -225,27 +225,64 @@
             .grid { grid-template-columns: 1fr; gap: 20px; }
         }
 
-        .card {
+        /* HARDENED NATIVE INTERACTIVE TERMINAL EXPANSION CRITERIA */
+        details.card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             padding: 25px;
             border-radius: 4px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: border-color 0.3s ease;
+            cursor: pointer;
+            display: block;
         }
 
-        .card:hover {
-            border-color: rgba(16, 185, 129, 0.4);
-            transform: translateY(-2px);
+        details.card[open] {
+            border-color: var(--accent-color);
+        }
+
+        summary {
+            list-style: none;
+            outline: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .card-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .card-title {
             color: #fff;
             font-weight: bold;
             font-size: 15px;
-            margin-bottom: 12px;
             letter-spacing: 1px;
             text-transform: uppercase;
+            margin: 0;
+        }
+
+        .expand-indicator {
+            color: var(--accent-color);
+            font-size: 12px;
+            font-weight: bold;
+            font-family: monospace;
+            transition: transform 0.2s ease;
+        }
+
+        details[open] .expand-indicator {
+            transform: rotate(90deg);
+            color: #fff;
+        }
+
+        .card-content-panel {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border-color);
+            cursor: default;
         }
 
         .tech-label {
@@ -330,66 +367,139 @@
                 Fulminix Systems engineers high-performance, native application-layer data transport solutions built for mission-critical enterprise environments. We focus entirely on eliminating pipeline bottlenecks, allowing core network fabrics and high-frequency streaming infrastructure to achieve optimal line-rate processing capacity under volatile workload demands.
             </p>
         </section>
-
         <section>
             <h2>Computational Performance & Efficiency</h2>
             <div class="grid">
-                <div class="card">
-                    <span class="tech-label">01 // LATENCY INGESTION</span>
-                    <div class="card-title">⚡ Microsecond Velocity</div>
-                    <p><strong>Problem:</strong> Traditional network serialization frameworks and heavy abstraction layers introduce crushing application-level decoding bottlenecks when high-velocity traffic spikes hit core systems.</p>
-                    <p><strong>Solution:</strong> The engine processes mission-critical hardware data streams inside active memory registers within a native 10-45 microsecond threshold, shifting execution straight to the bare metal [USER-CONTEXT].</p>
-                </div>
-                <div class="card">
-                    <span class="tech-label">02 // THROUGHPUT RATE</span>
-                    <div class="card-title">🚀 Architectural Outpace</div>
-                    <p><strong>Problem:</strong> Standard serialized data queues hit absolute performance thresholds under multi-gigabit workloads, forcing system resource starvation and degrading downstream services.</p>
-                    <p><strong>Solution:</strong> Delivers an authenticated 50x to 100x execution velocity increase compared to legacy setups, guaranteeing deep corporate logic receive completely un-throttled transport channels.</p>
-                </div>
-                <div class="card">
-                    <span class="tech-label">03 // CAPACITY OPTIMIZATION</span>
-                    <div class="card-title">📉 Footprint Consolidation</div>
-                    <p><strong>Problem:</strong> Scaling data capacity traditionally requires renting sprawling cloud clusters or massive server rack arrays, ballooning annual operational expenditures (OpEx).</p>
-                    <p><strong>Solution:</strong> Compresses required server hardware capacity and background processing overhead by 70-75%, allowing enterprise networks to multiply throughput while slashing infrastructure footprints.</p>
-                </div>
-                <div class="card">
-                    <span class="tech-label">04 // DATA HANDSHAKE</span>
-                    <div class="card-title">💾 Zero-Loss Retention</div>
-                    <p><strong>Problem:</strong> Volumetric traffic surges trigger packet drop-rates and minor handshake friction, resulting in data leaks, corrupted profiles, and expensive system state desynchronization.</p>
-                    <p><strong>Solution:</strong> Guarantees a flawless 0% memory drop-rate across the entire connection layout, protecting transaction integrity and corporate assets on both ends of the handshake simultaneously [USER-CONTEXT].</p>
-                </div>
+                <details class="card">
+                    <summary>
+                        <span class="tech-label">01 // LATENCY INGESTION</span>
+                        <div class="card-title-row">
+                            <div class="card-title">⚡ Microsecond Velocity</div>
+                            <div class="expand-indicator">[+]</div>
+                        </div>
+                    </summary>
+                    <div class="card-content-panel">
+                        <p><strong>Problem:</strong> Traditional network serialization frameworks and heavy abstraction layers introduce crushing application-level decoding bottlenecks when high-velocity traffic spikes hit core systems.</p>
+                        <p><strong>Solution:</strong> The engine processes mission-critical hardware data streams inside active memory registers within a native 10-45 microsecond threshold, shifting execution straight to the bare metal [USER-CONTEXT].</p>
+                    </div>
+                </details>
+
+                <details class="card">
+                    <summary>
+                        <span class="tech-label">02 // THROUGHPUT RATE</span>
+                        <div class="card-title-row">
+                            <div class="card-title">🚀 Architectural Outpace</div>
+                            <div class="expand-indicator">[+]</div>
+                        </div>
+                    </summary>
+                    <div class="card-content-panel">
+                        <p><strong>Problem:</strong> Standard serialized data queues hit absolute performance thresholds under multi-gigabit workloads, forcing system resource starvation and degrading downstream services.</p>
+                        <p><strong>Solution:</strong> Delivers an authenticated 50x to 100x execution velocity increase compared to legacy setups, guaranteeing deep corporate logic receive completely un-throttled transport channels.</p>
+                    </div>
+                </details>
+
+                <details class="card">
+                    <summary>
+                        <span class="tech-label">03 // CAPACITY OPTIMIZATION</span>
+                        <div class="card-title-row">
+                            <div class="card-title">📉 Footprint Consolidation</div>
+                            <div class="expand-indicator">[+]</div>
+                        </div>
+                    </summary>
+                    <div class="card-content-panel">
+                        <p><strong>Problem:</strong> Scaling data capacity traditionally requires renting sprawling cloud clusters or massive server rack arrays, ballooning annual operational expenditures (OpEx).</p>
+                        <p><strong>Solution:</strong> Compresses required server hardware capacity and background processing overhead by 70-75%, allowing enterprise networks to multiply throughput while slashing infrastructure footprints.</p>
+                    </div>
+                </details>
+
+                <details class="card">
+                    <summary>
+                        <span class="tech-label">04 // DATA HANDSHAKE</span>
+                        <div class="card-title-row">
+                            <div class="card-title">💾 Zero-Loss Retention</div>
+                            <div class="expand-indicator">[+]</div>
+                        </div>
+                    </summary>
+                    <div class="card-content-panel">
+                        <p><strong>Problem:</strong> Volumetric traffic surges trigger packet drop-rates and minor handshake friction, resulting in data leaks, corrupted profiles, and expensive system state desynchronization.</p>
+                        <p><strong>Solution:</strong> Guarantees a flawless 0% memory drop-rate across the entire connection layout, protecting transaction integrity and corporate assets on both ends of the handshake simultaneously [USER-CONTEXT].</p>
+                    </div>
+                </details>
             </div>
         </section>
 
         <section>
             <h2>Operational Security & Integration</h2>
             <div class="grid">
-                <div class="card">
-                    <span class="tech-label">05 // INGRESS GUARDRAIL</span>
-                    <div class="card-title">🛡️ Boundary Sanitation</div>
-                    <p><strong>Problem:</strong> Public-facing ingestion points are highly vulnerable to volumetric flood thrashing, malformed packet injection attacks, and malicious memory manipulation.</p>
-                    <p><strong>Solution:</strong> Enforces deterministic edge parsing directly at the socket doorstep, instantly neutralizing malformed payloads on the first clock cycle before they ever trigger memory allocations [USER-CONTEXT].</p>
-                </div>
-                <div class="card">
-                    <span class="tech-label">06 // RUNTIME INSULATION</span>
-                    <div class="card-title">🔐 Insulated FFI Protection</div>
-                    <p><strong>Problem:</strong> Interfacing high-level codebases with native low-level libraries across a Foreign Function Interface routinely introduces critical memory leaks and unstable runtime hazards.</p>
-                    <p><strong>Solution:</strong> Establishes a hardened, isolated boundary layer that locks cross-runtime calls into verified execution spaces, eliminating memory faults and common multi-language interface risks.</p>
-                </div>
-                <div class="card">
-                    <span class="tech-label">07 // FAULT TOLERANCE</span>
-                    <div class="card-title">🔒 Fault Insulation</div>
-                    <p><strong>Problem:</strong> Sudden network drops, unhandled data lane exceptions, or individual thread panics normally chain into systemic backpressure loops or catastrophic global server crashes.</p>
-                    <p><strong>Solution:</strong> Integrates advanced, asynchronous real-time tracking that catches and zeroes data corruption anomalies cleanly at the lane boundary, ensuring 100% operational uptime for the primary fabric [USER-CONTEXT].</p>
-                    <p><strong>Problem:</strong> Deploying infrastructure patches or upgrading data architectures forces massive corporate networks to endure expensive host service downtime and cluster recycling loops.</p>
-                    <p><strong>Solution:</strong> Engineered with a hot-swappable, in-line insertion blueprint that plugs directly into live production environments, requiring absolutely zero network resets or operational stoppages.</p>
-                </div>
-                <div class="card" style="grid-column: span 2;">
-                    <span class="tech-label">09 // AVAILABILITY FABRIC</span>
-                    <div class="card-title">👑 Five-Nines Uptime Reliability</div>
-                    <p><strong>Problem:</strong> Traditional infrastructure layers suffer from micro-stutters, race conditions, and minor resource leakage that degrade operational availability over time, causing costly out-of-service intervals and failing to hit strict corporate Service Level Agreements (SLAs).</p>
-                    <p><strong>Solution:</strong> Enforces an absolute 99.999% runtime availability standard natively within the data backbone [GOOGLE]. By handling data streams directly on the wire without garbage collection freezes or thread blockages, the system delivers continuous operational invariance under maximum production loads.</p>
-                </div>
+                <details class="card">
+                    <summary>
+                        <span class="tech-label">05 // INGRESS GUARDRAIL</span>
+                        <div class="card-title-row">
+                            <div class="card-title">🛡️ Boundary Sanitation</div>
+                            <div class="expand-indicator">[+]</div>
+                        </div>
+                    </summary>
+                    <div class="card-content-panel">
+                        <p><strong>Problem:</strong> Public-facing ingestion points are highly vulnerable to volumetric flood thrashing, malformed packet injection attacks, and malicious memory manipulation.</p>
+                        <p><strong>Solution:</strong> Enforces deterministic edge parsing directly at the socket doorstep, instantly neutralizing malformed payloads on the first clock cycle before they ever trigger memory allocations [USER-CONTEXT].</p>
+                    </div>
+                </details>
+
+                <details class="card">
+                    <summary>
+                        <span class="tech-label">06 // RUNTIME INSULATION</span>
+                        <div class="card-title-row">
+                            <div class="card-title">🔐 Insulated FFI Protection</div>
+                            <div class="expand-indicator">[+]</div>
+                        </div>
+                    </summary>
+                    <div class="card-content-panel">
+                        <p><strong>Problem:</strong> Interfacing high-level codebases with native low-level libraries across a Foreign Function Interface routinely introduces critical memory leaks and unstable runtime hazards.</p>
+                        <p><strong>Solution:</strong> Establishes a hardened, isolated boundary layer that locks cross-runtime calls into verified execution spaces, eliminating memory faults and common multi-language interface risks.</p>
+                    </div>
+                </details>
+
+                <details class="card">
+                    <summary>
+                        <span class="tech-label">07 // FAULT TOLERANCE</span>
+                        <div class="card-title-row">
+                            <div class="card-title">🔒 Fault Insulation</div>
+                            <div class="expand-indicator">[+]</div>
+                        </div>
+                    </summary>
+                    <div class="card-content-panel">
+                        <p><strong>Problem:</strong> Sudden network drops, unhandled data lane exceptions, or individual thread panics normally chain into systemic backpressure loops or catastrophic global server crashes.</p>
+                        <p><strong>Solution:</strong> Integrates advanced, asynchronous real-time tracking that catches and zeroes data corruption anomalies cleanly at the lane boundary, ensuring 100% operational uptime for the primary fabric [USER-CONTEXT].</p>
+                    </div>
+                </details>
+
+                <details class="card">
+                    <summary>
+                        <span class="tech-label">08 // HOT SWAP PLUG-IN</span>
+                        <div class="card-title-row">
+                            <div class="card-title">🧬 Live Integration</div>
+                            <div class="expand-indicator">[+]</div>
+                        </div>
+                    </summary>
+                    <div class="card-content-panel">
+                        <p><strong>Problem:</strong> Deploying infrastructure patches or upgrading data architectures forces massive corporate networks to endure expensive host service downtime and cluster recycling loops.</p>
+                        <p><strong>Solution:</strong> Engineered with a hot-swappable, in-line insertion blueprint that plugs directly into live production environments, requiring absolutely zero network resets or operational stoppages.</p>
+                    </div>
+                </details>
+
+                <details class="card" style="grid-column: span 2;">
+                    <summary>
+                        <span class="tech-label">09 // AVAILABILITY FABRIC</span>
+                        <div class="card-title-row">
+                            <div class="card-title">👑 Five-Nines Uptime Reliability</div>
+                            <div class="expand-indicator">[+]</div>
+                        </div>
+                    </summary>
+                    <div class="card-content-panel">
+                        <p><strong>Problem:</strong> Traditional infrastructure layers suffer from micro-stutters, race conditions, and minor resource leakage that degrade operational availability over time, causing costly out-of-service intervals and failing to hit strict corporate Service Level Agreements (SLAs).</p>
+                        <p><strong>Solution:</strong> Enforces an absolute 99.999% runtime availability standard natively within the data backbone [GOOGLE]. By handling data streams directly on the wire without garbage collection freezes or thread blockages, the system delivers continuous operational invariance under maximum production loads.</p>
+                    </div>
+                </details>
             </div>
         </section>
 
@@ -416,6 +526,3 @@
 
 </body>
 </html>
-                <div class="card">
-                    <span class="tech-label">08 // HOT SWAP PLUG-IN</span>
-                    <div class="card-title">🧬 Live Integration</div>
