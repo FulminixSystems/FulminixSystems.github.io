@@ -8,8 +8,8 @@
         :root {
             --bg-color: #0a0f1d;
             --text-color: #d1d5db;
-            --accent-blue: #2563eb;
-            --lightning-glow: #3b82f6;
+            --accent-green: #10b981;
+            --lightning-glow: #34d399;
             --border-color: #1f2937;
             --card-bg: #111827;
         }
@@ -58,8 +58,8 @@
             -webkit-backdrop-filter: blur(8px);
             padding: 14px 24px;
             border-radius: 30px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(37, 99, 235, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(16, 185, 129, 0.2);
             margin: 0;
             max-width: 90%;
         }
@@ -105,7 +105,7 @@
             margin-bottom: 8px;
             opacity: 0;
             animation: dropDownText 0.8s cubic-bezier(0.1, 0.9, 0.2, 1) 0.2s forwards,
-                       shiftToDarkBlue 0.5s ease-out 1.5s forwards;
+                       shiftToDarkGreen 0.5s ease-out 1.5s forwards;
         }
 
         .center-connector {
@@ -611,7 +611,7 @@
     <script>
         let runningLoopId = null;
 
-        // ⚡ MOUSEOVER: TRACES STATIC RECTANGULAR EDGE CIRCUIT AROUND BOUNDARIES
+        // ⚡ MOUSEOVER: TRACES STATIC RECTANGULAR EDGE CIRCUIT AROUND BOUNDARIES (ELECTRIC GREEN)
         function runBorderArc(wrapperElement) {
             if (wrapperElement.classList.contains('active-frame')) return;
             const trigger = wrapperElement.querySelector('.card-header-trigger');
@@ -622,8 +622,8 @@
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.shadowBlur = 8;
-            ctx.shadowColor = '#3b82f6';
-            ctx.strokeStyle = '#2563eb';
+            ctx.shadowColor = '#34d399';
+            ctx.strokeStyle = '#10b981';
             ctx.lineWidth = 2;
             ctx.strokeRect(2, 2, canvas.width - 4, canvas.height - 2);
             canvas.style.opacity = '0.75';
@@ -635,7 +635,7 @@
             canvas.style.opacity = '0';
         }
 
-        // ⚡ MASTER SECTIONS: TRIGONOMETRIC FULL-WIDTH CANVAS JAGGED DISCHARGE GENERATOR
+        // ⚡ MASTER SECTIONS: TRIGONOMETRIC FULL-WIDTH CANVAS JAGGED DISCHARGE GENERATOR (ELECTRIC GREEN)
         function strikeSectionFrame(triggerElement) {
             const wrapper = triggerElement.closest('.collapsible-section-wrapper');
             const contentBlock = wrapper.querySelector('.section-content-block');
@@ -652,12 +652,12 @@
             function runPlasmaCycle() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.shadowBlur = 12;
-                ctx.shadowColor = '#3b82f6';
+                ctx.shadowColor = '#34d399';
                 
                 for (let loopIdx = 0; loopIdx < 2; loopIdx++) {
                     let currentX = 10;
                     let currentY = canvas.height / 2;
-                    ctx.strokeStyle = (loopIdx === 0) ? '#ffffff' : '#2563eb';
+                    ctx.strokeStyle = (loopIdx === 0) ? '#ffffff' : '#10b981';
                     ctx.lineWidth = (loopIdx === 0) ? 1.5 : 4;
                     ctx.beginPath();
                     ctx.moveTo(currentX, currentY);
@@ -689,7 +689,7 @@
             runPlasmaCycle();
         }
 
-        // ⚡ TEXT LINKS: TRUE BRANCHING VECTOR BOLT GENERATOR (60 FPS FLUID SPEED)
+        // ⚡ TEXT LINKS: TRUE BRANCHING VECTOR BOLT GENERATOR (60 FPS FLUID GREEN VELOCITY)
         function strikeLinkBolt(triggerElement) {
             const wrapper = triggerElement.closest('.card-wrapper');
             const contentPanel = wrapper.querySelector('.card-content-panel');
@@ -706,12 +706,12 @@
             function runLightningBurst() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.shadowBlur = 15;
-                ctx.shadowColor = '#3b82f6';
+                ctx.shadowColor = '#34d399';
 
                 for (let pathType = 0; pathType < 2; pathType++) {
                     let currentX = 15;
                     let currentY = canvas.height / 2;
-                    ctx.strokeStyle = (pathType === 0) ? '#ffffff' : '#2563eb';
+                    ctx.strokeStyle = (pathType === 0) ? '#ffffff' : '#10b981';
                     ctx.lineWidth = (pathType === 0) ? 1.5 : 4.5;
                     ctx.beginPath();
                     ctx.moveTo(currentX, currentY);
