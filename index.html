@@ -64,7 +64,7 @@
             max-width: 90%;
         }
 
-        /* 🎬 SAPPHIRE CIRCUIT SLOGAN FRAME */
+        /* 🎬 ZONE 1: COLOR-SHIFTING SLOGAN MODULE */
         .slogan-frame-container {
             position: relative;
             display: flex;
@@ -160,12 +160,6 @@
 
         @keyframes shiftToDarkBlue { 100% { color: #1e3a8a; text-shadow: none; } }
         @keyframes shiftToMetallicGold { 100% { color: #dfb15b; text-shadow: 0 0 10px rgba(223, 177, 91, 0.5); } }
-        @media (max-width: 600px) {
-            .slogan-frame-container { padding: 25px 30px; max-width: 90%; width: 100%; }
-            .top-phrase, .bottom-phrase { font-size: 12px; letter-spacing: 1px; }
-        }
-
-        section { margin-bottom: 60px; }
 
         .status-bar {
             background-color: rgba(37, 99, 235, 0.04);
@@ -178,6 +172,43 @@
             letter-spacing: 1px;
             box-shadow: inset 0 0 10px rgba(37, 99, 235, 0.05);
         }
+        /* 🏛️ SECURE COLLAPSIBLE MASTER ZONE HEADER STYLING */
+        .collapsible-section-wrapper {
+            margin-bottom: 40px;
+        }
+
+        .section-header-trigger {
+            background-color: transparent;
+            padding: 15px 0;
+            cursor: pointer;
+            position: relative;
+            user-select: none;
+        }
+
+        .section-header-trigger h2 {
+            margin: 0;
+            display: inline-block;
+        }
+
+        .section-indicator {
+            float: right;
+            color: var(--lightning-glow);
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 18px;
+            margin-top: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-section-wrapper.section-open .section-indicator {
+            transform: rotate(90deg);
+            color: #fff;
+        }
+
+        .section-content-block {
+            display: none;
+            padding-top: 30px;
+        }
 
         h2 {
             color: #fff;
@@ -186,24 +217,23 @@
             text-transform: uppercase;
             border-left: 4px solid var(--accent-blue);
             padding-left: 15px;
-            margin-top: 0;
-            margin-bottom: 24px;
         }
 
         p { font-size: 14px; color: #9ca3af; text-align: justify; margin-bottom: 20px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
-        .full-width-stack { display: flex; flex-direction: column; gap: 30px; margin-top: 30px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .full-width-stack { display: flex; flex-direction: column; gap: 30px; }
 
         @media (max-width: 600px) { .grid { grid-template-columns: 1fr; gap: 20px; } }
 
-        /* ⚡ ERRATIC JAGGED LIGHTNING COMPONENT MODULES WITH AUTO-FADE LIFECYCLE */
+        /* ⚡ TRUE CANVAS VECTOR INTERFACE SYSTEMS */
         .card-wrapper {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 4px;
             position: relative;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            overflow: hidden;
+            transition: border-color 0.25s ease;
         }
 
         .card-header-trigger {
@@ -211,54 +241,30 @@
             cursor: pointer;
             position: relative;
             user-select: none;
+            z-index: 2;
         }
 
-        /* Lightning Canvas Shell Overlay */
-        .lightning-bolt-track {
+        /* Full Overlay Layer for True Mathematical Voltage Paths */
+        .lightning-canvas-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 10;
-            opacity: 0;
-            transition: opacity 0.25s ease-out;
+            z-index: 5;
         }
 
-        .card-title-row { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 3; }
+        .card-title-row { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 6; }
         .card-title { color: #fff; font-weight: bold; font-size: 15px; letter-spacing: 1px; text-transform: uppercase; margin: 0; }
         .expand-indicator { color: var(--lightning-glow); font-size: 12px; font-weight: bold; font-family: monospace; transition: all 0.3s ease; }
 
         .card-wrapper.active-frame .expand-indicator {
             transform: rotate(90deg);
             color: #fff;
-            text-shadow: 0 0 8px var(--lightning-glow);
         }
 
-        /* Fade and return back to normal box style configurations seamlessly */
         .card-wrapper.active-frame {
             border-color: var(--border-color);
-        }
-
-        .card-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(255, 255, 255, 0);
-            pointer-events: none;
-            z-index: 5;
-            border-radius: 4px;
-        }
-
-        .card-wrapper.discharge-pulse::before {
-            animation: voltageDischarge 0.35s cubic-bezier(0.1, 0.8, 0.3, 1);
-        }
-
-        @keyframes voltageDischarge {
-            0% { background: rgba(255, 255, 255, 0.35); filter: blur(2px); }
-            30% { background: rgba(37, 99, 235, 0.15); }
-            100% { background: rgba(37, 99, 235, 0); }
         }
 
         .card-content-panel {
@@ -267,9 +273,11 @@
             border-top: 1px dashed var(--border-color);
             margin-top: 5px;
             padding-top: 20px;
+            position: relative;
+            z-index: 6;
         }
 
-        .tech-label { display: block; font-size: 11px; color: var(--lightning-glow); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: bold; position: relative; z-index: 3; }
+        .tech-label { display: block; font-size: 11px; color: var(--lightning-glow); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: bold; position: relative; z-index: 6; }
 
         /* 📊 ZONE 3.5 PERMANENT RECOUP TELEMETRY ANCHOR */
         .emulator-terminal { background-color: #060b13; border: 1px solid #1f2937; border-radius: 4px; padding: 20px; margin: 40px auto 60px auto; font-family: monospace; box-shadow: inset 0 0 15px rgba(0,0,0,0.8); }
@@ -327,242 +335,262 @@
                 Fulminix Systems engineers high-performance, native application-layer data transport solutions built for mission-critical enterprise environments. We focus entirely on eliminating pipeline bottlenecks, allowing core network fabrics and high-frequency streaming infrastructure to achieve optimal line-rate processing capacity under volatile workload demands.
             </p>
         </section>
-        <!-- ZONE 2: COMPUTATIONAL PERFORMANCE CRITERIA (COLLAPSIBLE) -->
-        <section>
-            <h2>Computational Performance Criteria</h2>
-            <div class="grid">
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">01 // LATENCY INGESTION</span>
-                        <div class="card-title-row">
-                            <div class="card-title">⚡ Microsecond Velocity</div>
-                            <div class="expand-indicator">[+]</div>
-                        </div>
-                    </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> Traditional network serialization frameworks and heavy abstraction layers introduce crushing application-level decoding bottlenecks when high-velocity traffic spikes hit core systems.</p>
-                        <p><strong>Solution:</strong> The engine processes mission-critical hardware data streams inside active memory registers within a native 10-45 microsecond threshold, shifting execution straight to the bare metal [USER-CONTEXT].</p>
-                    </div>
-                </div>
-
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">02 // THROUGHPUT RATE</span>
-                        <div class="card-title-row">
-                            <div class="card-title">🚀 Architectural Outpace</div>
-                            <div class="expand-indicator">[+]</div>
-                        </div>
-                    </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> Standard serialized data queues hit absolute performance thresholds under multi-gigabit workloads, forcing system resource starvation and degrading downstream services.</p>
-                        <p><strong>Solution:</strong> Delivers an authenticated 50x to 100x execution velocity increase compared to legacy setups, guaranteeing deep corporate logic receive completely un-throttled transport channels.</p>
-                    </div>
-                </div>
+        <!-- ZONE 2: COMPUTATIONAL PERFORMANCE CRITERIA (COLLAPSIBLE MASTER BLOCK) -->
+        <div class="collapsible-section-wrapper">
+            <div class="section-header-trigger" onclick="strikeSectionFrame(this)">
+                <canvas class="lightning-canvas-overlay"></canvas>
+                <h2>Computational Performance Criteria</h2>
+                <div class="section-indicator">[+]</div>
             </div>
-        </section>
-
-        <!-- ZONE 3: OPERATIONAL SECURITY & INSULATION (COLLAPSIBLE) -->
-        <section>
-            <h2>Operational Security & Insulation</h2>
-            <div class="grid">
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">03 // INGRESS GUARDRAIL</span>
-                        <div class="card-title-row">
-                            <div class="card-title">🛡️ Boundary Sanitation</div>
-                            <div class="expand-indicator">[+]</div>
+            <div class="section-content-block">
+                <div class="grid">
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">01 // LATENCY INGESTION</span>
+                            <div class="card-title-row">
+                                <div class="card-title">⚡ Microsecond Velocity</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
+                        </div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> Traditional network serialization frameworks and heavy abstraction layers introduce crushing application-level decoding bottlenecks when high-velocity traffic spikes hit core systems.</p>
+                            <p><strong>Solution:</strong> The engine processes mission-critical hardware data streams inside active memory registers within a native 10-45 microsecond threshold, shifting execution straight to the bare metal [USER-CONTEXT].</p>
                         </div>
                     </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> Public-facing ingestion points are highly vulnerable to volumetric flood thrashing, malformed packet injection attacks, and malicious memory manipulation.</p>
-                        <p><strong>Solution:</strong> Enforces deterministic edge parsing directly at the socket doorstep, instantly neutralizing malformed payloads on the first clock cycle before they ever trigger memory allocations [USER-CONTEXT].</p>
-                    </div>
-                </div>
 
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">04 // RUNTIME INSULATION</span>
-                        <div class="card-title-row">
-                            <div class="card-title">🔐 Insulated FFI Protection</div>
-                            <div class="expand-indicator">[+]</div>
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">02 // THROUGHPUT RATE</span>
+                            <div class="card-title-row">
+                                <div class="card-title">🚀 Architectural Outpace</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
+                        </div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> Standard serialized data queues hit absolute performance thresholds under multi-gigabit workloads, forcing system resource starvation and degrading downstream services.</p>
+                            <p><strong>Solution:</strong> Delivers an authenticated 50x to 100x execution velocity increase compared to legacy setups, guaranteeing deep corporate logic receive completely un-throttled transport channels.</p>
                         </div>
                     </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> Interfacing high-level codebases with native low-level libraries across a Foreign Function Interface routinely introduces critical memory leaks and unstable runtime hazards.</p>
-                        <p><strong>Solution:</strong> Establishes a hardened, isolated boundary layer that locks cross-runtime calls into verified execution spaces, eliminating memory faults and common multi-language interface risks.</p>
-                    </div>
-                </div>
-
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">05 // FAULT TOLERANCE</span>
-                        <div class="card-title-row">
-                            <div class="card-title">🔒 Fault Insulation</div>
-                            <div class="expand-indicator">[+]</div>
-                        </div>
-                    </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> Sudden network drops, unhandled data lane exceptions, or individual thread panics normally chain into systemic backpressure loops or catastrophic global server crashes.</p>
-                        <p><strong>Solution:</strong> Integrates advanced, asynchronous real-time tracking that catches and zeroes data corruption anomalies cleanly at the lane boundary, ensuring 100% operational uptime for the primary fabric [USER-CONTEXT].</p>
-                    </div>
-                </div>
-
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">06 // HOT SWAP PLUG-IN</span>
-                        <div class="card-title-row">
-                            <div class="card-title">🧬 Live Integration</div>
-                            <div class="expand-indicator">[+]</div>
-                        </div>
-                    </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> Deploying infrastructure patches or upgrading data architectures forces massive corporate networks to endure expensive host service downtime and cluster recycling loops.</p>
-                        <p><strong>Solution:</strong> Engineered with a hot-swappable, in-line insertion blueprint that plugs directly into live production environments, requiring absolutely zero network resets or operational stoppages.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 📊 ACTIVE DIVIDING TELEMETRY LEDGER BRIDGE -->
-        <div class="emulator-terminal">
-            <div class="emulator-header">
-                <span>⚡ FULMINIX HARMONIC COMPRESSION ANALYZER</span>
-                <span>STATUS: HARDWARE EMBED ON-LINE</span>
-            </div>
-            <div class="workload-slider-wrapper">
-                <div class="slider-label-row">
-                    <span>TARGET DEMAND STREAM SCALE:</span>
-                    <span id="slider-txt-val" style="color: var(--lightning-glow); font-weight: bold;">10 Gbps LINE-RATE</span>
-                </div>
-                <input type="range" min="10" max="100" value="10" class="workload-range-input" oninput="recalculateTelemetry(this.value)">
-            </div>
-            <div class="metrics-output-row">
-                <div class="metric-telemetry-box">
-                    <div class="telemetry-val" id="t-lat">11.4 µs</div>
-                    <div class="telemetry-lbl">REGISTRATION WINDOW</div>
-                </div>
-                <div class="metric-telemetry-box">
-                    <div class="telemetry-val" id="t-ft">71.2 %</div>
-                    <div class="telemetry-lbl">HARDWARE CONSOLIDATION</div>
-                </div>
-                <div class="metric-telemetry-box">
-                    <div class="telemetry-val" id="t-drop" style="color: var(--accent-blue);">0.0000 %</div>
-                    <div class="telemetry-lbl">PACKET RETENTION RATE</div>
                 </div>
             </div>
         </div>
 
-        <!-- ZONE 4: HARDWARE ENGINEERING & RESOURCE OPTIMIZATION (COLLAPSIBLE) -->
-        <section>
-            <h2>Hardware Engineering & Resource Optimization</h2>
-            <div class="grid">
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">07 // CAPACITY OPTIMIZATION</span>
-                        <div class="card-title-row">
-                            <div class="card-title">📉 Footprint Consolidation</div>
-                            <div class="expand-indicator">[+]</div>
+        <!-- ZONE 3: OPERATIONAL SECURITY & INSULATION (COLLAPSIBLE MASTER BLOCK) -->
+        <div class="collapsible-section-wrapper">
+            <div class="section-header-trigger" onclick="strikeSectionFrame(this)">
+                <canvas class="lightning-canvas-overlay"></canvas>
+                <h2>Operational Security & Insulation</h2>
+                <div class="section-indicator">[+]</div>
+            </div>
+            <div class="section-content-block">
+                <div class="grid">
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">03 // INGRESS GUARDRAIL</span>
+                            <div class="card-title-row">
+                                <div class="card-title">🛡️ Boundary Sanitation</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
+                        </div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> Public-facing ingestion points are highly vulnerable to volumetric flood thrashing, malformed packet injection attacks, and malicious memory manipulation.</p>
+                            <p><strong>Solution:</strong> Enforces deterministic edge parsing directly at the socket doorstep, instantly neutralizing malformed payloads on the first clock cycle before they ever trigger memory allocations [USER-CONTEXT].</p>
                         </div>
                     </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> Scaling data capacity traditionally requires renting sprawling cloud clusters or massive server rack arrays, ballooning annual operational expenditures (OpEx).</p>
-                        <p><strong>Solution:</strong> Compresses required server hardware capacity and background processing overhead by 70-75%, allowing enterprise networks to multiply throughput while slashing infrastructure footprints.</p>
-                    </div>
-                </div>
 
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">08 // MEMORY ALLOCATION</span>
-                        <div class="card-title-row">
-                            <div class="card-title">⚙️ Hardened Allocation Architecture</div>
-                            <div class="expand-indicator">[+]</div>
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">04 // RUNTIME INSULATION</span>
+                            <div class="card-title-row">
+                                <div class="card-title">🔐 Insulated FFI Protection</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
+                        </div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> Interfacing high-level codebases with native low-level libraries across a Foreign Function Interface routinely introduces critical memory leaks and unstable runtime hazards.</p>
+                            <p><strong>Solution:</strong> Establishes a hardened, isolated boundary layer that locks cross-runtime calls into verified execution spaces, eliminating memory faults and common multi-language interface risks.</p>
                         </div>
                     </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> Surges in dynamic request volumes trigger memory fragment bottlenecks inside standard operating system heap allocators, inducing system stutter and latency drops.</p>
-                        <p><strong>Solution:</strong> Hooks natively into an integrated Microsoft mimalloc hub to enforce secure thread isolation limits and achieve ultra-stable performance scaling across bare-metal environments [USER-CONTEXT].</p>
+
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">05 // FAULT TOLERANCE</span>
+                            <div class="card-title-row">
+                                <div class="card-title">🔒 Fault Insulation</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
+                        </div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> Sudden network drops, unhandled data lane exceptions, or individual thread panics normally chain into systemic backpressure loops or catastrophic global server crashes.</p>
+                            <p><strong>Solution:</strong> Integrates advanced, asynchronous real-time tracking that catches and zeroes data corruption anomalies cleanly at the lane boundary, ensuring 100% operational uptime for the primary fabric [USER-CONTEXT].</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">06 // HOT SWAP PLUG-IN</span>
+                            <div class="card-title-row">
+                                <div class="card-title">🧬 Live Integration</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
+                        </div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> Deploying infrastructure patches or upgrading data architectures forces massive corporate networks to endure expensive host service downtime and cluster recycling loops.</p>
+                            <p><strong>Solution:</strong> Engineered with a hot-swappable, in-line insertion blueprint that plugs directly into live production environments, requiring absolutely zero network resets or operational stoppages.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    <!-- 📊 ACTIVE HARDWARE DIVISION TELEMETRY CORE (PERMANENTLY LOCKED EXPANDED) -->
+    <div class="emulator-terminal">
+        <div class="emulator-header">
+            <span>⚡ FULMINIX HARMONIC COMPRESSION ANALYZER</span>
+            <span>STATUS: HARDWARE EMBED ON-LINE</span>
+        </div>
+        <div class="workload-slider-wrapper">
+            <div class="slider-label-row">
+                <span>TARGET DEMAND STREAM SCALE:</span>
+                <span id="slider-txt-val" style="color: var(--lightning-glow); font-weight: bold;">10 Gbps LINE-RATE</span>
+            </div>
+            <input type="range" min="10" max="100" value="10" class="workload-range-input" oninput="recalculateTelemetry(this.value)">
+        </div>
+        <div class="metrics-output-row">
+            <div class="metric-telemetry-box">
+                <div class="telemetry-val" id="t-lat">11.4 µs</div>
+                <div class="telemetry-lbl">REGISTRATION WINDOW</div>
+            </div>
+            <div class="metric-telemetry-box">
+                <div class="telemetry-val" id="t-ft">71.2 %</div>
+                <div class="telemetry-lbl">HARDWARE CONSOLIDATION</div>
+            </div>
+            <div class="metric-telemetry-box">
+                <div class="telemetry-val" id="t-drop" style="color: var(--accent-blue);">0.0000 %</div>
+                <div class="telemetry-lbl">PACKET RETENTION RATE</div>
+            </div>
+        </div>
+    </div>
 
-        <section>
-            <h2>High-Availability Fabric & Compliance</h2>
-            <div class="full-width-stack">
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">09 // UPTIME GUARANTEE</span>
-                        <div class="card-title-row">
-                            <div class="card-title">👑 Five-Nines Uptime Reliability</div>
-                            <div class="expand-indicator">[+]</div>
+    <div class="container" style="padding-top: 0;">
+        <!-- ZONE 4: HARDWARE ENGINEERING & RESOURCE OPTIMIZATION (COLLAPSIBLE MASTER BLOCK) -->
+        <div class="collapsible-section-wrapper">
+            <div class="section-header-trigger" onclick="strikeSectionFrame(this)">
+                <canvas class="lightning-canvas-overlay"></canvas>
+                <h2>Hardware Engineering & Resource Optimization</h2>
+                <div class="section-indicator">[+]</div>
+            </div>
+            <div class="section-content-block">
+                <div class="grid">
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">07 // CAPACITY OPTIMIZATION</span>
+                            <div class="card-title-row">
+                                <div class="card-title">📉 Footprint Consolidation</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
+                        </div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> Scaling data capacity traditionally requires renting sprawling cloud clusters or massive server rack arrays, ballooning annual operational expenditures (OpEx).</p>
+                            <p><strong>Solution:</strong> Compresses required server hardware capacity and background processing overhead by 70-75%, allowing enterprise networks to multiply throughput while slashing infrastructure footprints.</p>
                         </div>
                     </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> Traditional infrastructure layers encounter structural trace desyncs and gradual memory drift, violating rigorous corporate Service Level Agreements (SLAs).</p>
-                        <p><strong>Solution:</strong> Enforces an absolute 99.999% processing availability parameter, absorbing volatile load drops without structural stutter periods [GOOGLE].</p>
-                    </div>
-                </div>
 
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">10 // ENVIRONMENT MATCH</span>
-                        <div class="card-title-row">
-                            <div class="card-title">🏛️ Cryptographic Compliance & Target Environments</div>
-                            <div class="expand-indicator">[+]</div>
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">08 // MEMORY ALLOCATION</span>
+                            <div class="card-title-row">
+                                <div class="card-title">⚙️ Hardened Allocation Architecture</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> Legacy frameworks fail to integrate smoothly across strict corporate environments, introducing auditing friction and deployment obstacles.</p>
-                        <p><strong>Solution:</strong> Compiles natively into standalone binary assets optimized for Windows Server kernels and RHEL clusters, incorporating immediate cryptographic zeroization routines.</p>
-                    </div>
-                </div>
-
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">11 // OBSERVABILITY FABRIC</span>
-                        <div class="card-title-row">
-                            <div class="card-title">📊 Automated Performance Telemetry Channels</div>
-                            <div class="expand-indicator">[+]</div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> Surges in dynamic request volumes trigger memory fragment bottlenecks inside standard operating system heap allocators, inducing system stutter and latency drops.</p>
+                            <p><strong>Solution:</strong> Hooks natively into an integrated Microsoft mimalloc hub to enforce secure thread isolation limits and achieve ultra-stable performance scaling across bare-metal environments [USER-CONTEXT].</p>
                         </div>
-                    </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> High-velocity applications operate as unmonitored tracking blocks, preventing network technicians from diagnosing hidden path choke points.</p>
-                        <p><strong>Solution:</strong> Integrates dedicated telemetry pathways that stream performance tracking diagnostics straight to analytics frameworks without adding core thread blocking.</p>
-                    </div>
-                </div>
-
-                <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
-                    <div class="card-header-trigger" onclick="strikeLightningAndToggle(this)">
-                        <div class="lightning-bolt-track"></div>
-                        <span class="tech-label">12 // BOUNDARY RULES</span>
-                        <div class="card-title-row">
-                            <div class="card-title">📜 Architectural Governance & Implementation Limits</div>
-                            <div class="expand-indicator">[+]</div>
-                        </div>
-                    </div>
-                    <div class="card-content-panel">
-                        <p><strong>Problem:</strong> Enterprise platforms are constantly exposed to unexpected software overhead and open-ended modification cycles from third-party vendor platforms.</p>
-                        <p><strong>Solution:</strong> Restricts interaction exclusively to hardware-locked compiled payloads, ensuring rigid operational scope boundaries and absolute design protection.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
+        <!-- ZONE 5: HIGH-AVAILABILITY FABRIC & COMPLIANCE (COLLAPSIBLE MASTER BLOCK) -->
+        <div class="collapsible-section-wrapper">
+            <div class="section-header-trigger" onclick="strikeSectionFrame(this)">
+                <canvas class="lightning-canvas-overlay"></canvas>
+                <h2>High-Availability Fabric & Compliance</h2>
+                <div class="section-indicator">[+]</div>
+            </div>
+            <div class="section-content-block">
+                <div class="full-width-stack">
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">09 // UPTIME GUARANTEE</span>
+                            <div class="card-title-row">
+                                <div class="card-title">👑 Five-Nines Uptime Reliability</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
+                        </div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> Traditional infrastructure layers encounter structural trace desyncs and gradual memory drift, violating rigorous corporate Service Level Agreements (SLAs).</p>
+                            <p><strong>Solution:</strong> Enforces an absolute 99.999% processing availability parameter, absorbing volatile load drops without structural stutter periods [GOOGLE].</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">10 // ENVIRONMENT MATCH</span>
+                            <div class="card-title-row">
+                                <div class="card-title">🏛️ Cryptographic Compliance & Target Environments</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
+                        </div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> Legacy frameworks fail to integrate smoothly across strict corporate environments, introducing auditing friction and deployment obstacles.</p>
+                            <p><strong>Solution:</strong> Compiles natively into standalone binary assets optimized for Windows Server kernels and RHEL clusters, incorporating immediate cryptographic zeroization routines.</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">11 // OBSERVABILITY FABRIC</span>
+                            <div class="card-title-row">
+                                <div class="card-title">📊 Automated Performance Telemetry Channels</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
+                        </div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> High-velocity applications operate as unmonitored tracking blocks, preventing network technicians from diagnosing hidden path choke points.</p>
+                            <p><strong>Solution:</strong> Integrates dedicated telemetry pathways that stream performance tracking diagnostics straight to analytics frameworks without adding core thread blocking.</p>
+                        </div>
+                    </div>
+
+                    <div class="card-wrapper" onmouseenter="runBorderArc(this)" onmouseleave="clearBorderArc(this)">
+                        <div class="card-header-trigger" onclick="strikeLinkBolt(this)">
+                            <canvas class="lightning-canvas-overlay"></canvas>
+                            <span class="tech-label">12 // BOUNDARY RULES</span>
+                            <div class="card-title-row">
+                                <div class="card-title">📜 Architectural Governance & Implementation Limits</div>
+                                <div class="expand-indicator">[+]</div>
+                            </div>
+                        </div>
+                        <div class="card-content-panel">
+                            <p><strong>Problem:</strong> Enterprise platforms are constantly exposed to unexpected software overhead and open-ended modification cycles from third-party vendor platforms.</p>
+                            <p><strong>Solution:</strong> Restricts interaction exclusively to hardware-locked compiled payloads, ensuring rigid operational scope boundaries and absolute design protection.</p>
+        <!-- ZONE 6: ENTERPRISE SANDBOX ANCHOR (PERMANENTLY FLAT & OPEN) -->
         <section>
             <h2>Enterprise Sandbox Engagement</h2>
             <p>
-                Fulminix Systems operates exclusively under private architectural staging agreements. To maintain strict security boundaries and protect proprietary engineering models, we do not provide public access to source code repositories, evaluation binaries, or low-level documentation. Strategic configurations are initialized only after identity verification and the execution of a Mutual Non-Disclosure Agreement (NDA) [USER-CONTEXT].
+                Fulminix Systems operates exclusively under private architectural staging agreements. To maintain strict security boundaries and protect proprietary engineering models, we do not provide public access to source code repositories, evaluation binaries, or low-level documentation. Strategic configurations are initialized only after identity verification and the execution of a Mutual Non-Disclosure Agreement (NDA).
             </p>
         </section>
 
@@ -581,70 +609,148 @@
     </div>
 
     <script>
+        let runningLoopId = null;
+
+        // ⚡ MOUSEOVER: TRACES STATIC RECTANGULAR EDGE CIRCUIT AROUND BOUNDARIES
         function runBorderArc(wrapperElement) {
             if (wrapperElement.classList.contains('active-frame')) return;
             const trigger = wrapperElement.querySelector('.card-header-trigger');
-            const boltTrack = trigger.querySelector('.lightning-bolt-track');
-            const width = trigger.offsetWidth;
-            const height = trigger.offsetHeight;
-            
-            let svgMarkup = `<svg viewBox="0 0 ${width} ${height}" style="position:absolute; inset:0; width:100%; height:100%;">
-                <rect x="1" y="1" width="${width-2}" height="${height-2}" fill="none" 
-                      stroke="var(--accent-blue)" stroke-width="2.5" 
-                      style="filter: drop-shadow(0 0 5px var(--lightning-glow)); opacity: 0.75;" />
-            </svg>`;
-            
-            boltTrack.innerHTML = svgMarkup;
-            boltTrack.style.opacity = '1';
+            const canvas = trigger.querySelector('.lightning-canvas-overlay');
+            canvas.width = trigger.offsetWidth;
+            canvas.height = trigger.offsetHeight;
+            const ctx = canvas.getContext('2d');
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = '#3b82f6';
+            ctx.strokeStyle = '#2563eb';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(2, 2, canvas.width - 4, canvas.height - 2);
+            canvas.style.opacity = '0.75';
         }
 
         function clearBorderArc(wrapperElement) {
             if (wrapperElement.classList.contains('active-frame')) return;
-            const boltTrack = wrapperElement.querySelector('.lightning-bolt-track');
-            boltTrack.style.opacity = '0';
+            const canvas = wrapperElement.querySelector('.lightning-canvas-overlay');
+            canvas.style.opacity = '0';
         }
 
-        function strikeLightningAndToggle(triggerElement) {
+        // ⚡ MASTER SECTIONS: TRIGONOMETRIC FULL-WIDTH CANVAS JAGGED DISCHARGE GENERATOR
+        function strikeSectionFrame(triggerElement) {
+            const wrapper = triggerElement.closest('.collapsible-section-wrapper');
+            const contentBlock = wrapper.querySelector('.section-content-block');
+            const canvas = triggerElement.querySelector('.lightning-canvas-overlay');
+            const indicator = triggerElement.querySelector('.section-indicator');
+            const isOpen = wrapper.classList.contains('section-open');
+
+            canvas.width = triggerElement.offsetWidth;
+            canvas.height = triggerElement.offsetHeight;
+            const ctx = canvas.getContext('2d');
+            canvas.style.opacity = '1';
+
+            let durationCounter = 0;
+            function runPlasmaCycle() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.shadowBlur = 12;
+                ctx.shadowColor = '#3b82f6';
+                
+                for (let loopIdx = 0; loopIdx < 2; loopIdx++) {
+                    let currentX = 10;
+                    let currentY = canvas.height / 2;
+                    ctx.strokeStyle = (loopIdx === 0) ? '#ffffff' : '#2563eb';
+                    ctx.lineWidth = (loopIdx === 0) ? 1.5 : 4;
+                    ctx.beginPath();
+                    ctx.moveTo(currentX, currentY);
+                    
+                    while (currentX < canvas.width - 10) {
+                        currentX += Math.floor(Math.random() * 20) + 12;
+                        currentY = (canvas.height / 2) + (Math.floor(Math.random() * 24) - 12);
+                        ctx.lineTo(currentX, currentY);
+                    }
+                    ctx.stroke();
+                }
+                
+                durationCounter++;
+                if (durationCounter < 6) {
+                    requestAnimationFrame(runPlasmaCycle);
+                } else {
+                    canvas.style.opacity = '0';
+                    if (isOpen) {
+                        wrapper.classList.remove('section-open');
+                        contentBlock.style.display = 'none';
+                        if(indicator) indicator.innerText = '[+]';
+                    } else {
+                        wrapper.classList.add('section-open');
+                        contentBlock.style.display = 'block';
+                        if(indicator) indicator.innerText = '[-]';
+                    }
+                }
+            }
+            runPlasmaCycle();
+        }
+
+        // ⚡ TEXT LINKS: TRUE BRANCHING VECTOR BOLT GENERATOR (60 FPS FLUID SPEED)
+        function strikeLinkBolt(triggerElement) {
             const wrapper = triggerElement.closest('.card-wrapper');
             const contentPanel = wrapper.querySelector('.card-content-panel');
-            const boltTrack = triggerElement.querySelector('.lightning-bolt-track');
+            const canvas = triggerElement.querySelector('.lightning-canvas-overlay');
+            const indicator = wrapper.querySelector('.expand-indicator');
             const isOpen = wrapper.classList.contains('active-frame');
-            const width = triggerElement.offsetWidth;
-            const height = triggerElement.offsetHeight;
 
-            let svgMarkup = `<svg viewBox="0 0 ${width} ${height}" style="position:absolute; inset:0; width:100%; height:100%;">`;
-            for (let pathNum = 0; pathNum < 2; pathNum++) {
-                let currentX = 15;
-                let currentY = height / 2;
-                svgMarkup += `<path d="M ${currentX} ${currentY} `;
-                
-                while (currentX < width - 15) {
-                    currentX += Math.floor(Math.random() * 20) + 12;
-                    currentY = (height / 2) + (Math.floor(Math.random() * 26) - 13);
-                    svgMarkup += `L ${currentX} ${currentY} `;
+            canvas.width = triggerElement.offsetWidth;
+            canvas.height = triggerElement.offsetHeight;
+            const ctx = canvas.getContext('2d');
+            canvas.style.opacity = '1';
+
+            let iterationIdx = 0;
+            function runLightningBurst() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = '#3b82f6';
+
+                for (let pathType = 0; pathType < 2; pathType++) {
+                    let currentX = 15;
+                    let currentY = canvas.height / 2;
+                    ctx.strokeStyle = (pathType === 0) ? '#ffffff' : '#2563eb';
+                    ctx.lineWidth = (pathType === 0) ? 1.5 : 4.5;
+                    ctx.beginPath();
+                    ctx.moveTo(currentX, currentY);
+
+                    while (currentX < canvas.width - 15) {
+                        currentX += Math.floor(Math.random() * 15) + 10;
+                        currentY = (canvas.height / 2) + (Math.floor(Math.random() * 20) - 10);
+                        ctx.lineTo(currentX, currentY);
+
+                        if (Math.random() > 0.72) {
+                            ctx.stroke(); 
+                            ctx.beginPath();
+                            ctx.moveTo(currentX, currentY);
+                            ctx.lineTo(currentX + Math.floor(Math.random() * 15), currentY + (Math.floor(Math.random() * 20) - 10));
+                            ctx.stroke();
+                            ctx.beginPath();
+                            ctx.moveTo(currentX, currentY);
+                        }
+                    }
+                    ctx.stroke();
                 }
-                svgMarkup += `" stroke="${pathNum === 0 ? '#ffffff' : 'var(--accent-blue)'}" 
-                               stroke-width="${pathNum === 0 ? '1.5' : '4.5'}" fill="none" 
-                               style="filter: drop-shadow(0 0 8px var(--lightning-glow));" />`;
-            }
-            svgMarkup += '</svg>';
-            
-            boltTrack.innerHTML = svgMarkup;
-            boltTrack.style.opacity = '1';
-            wrapper.classList.add('discharge-pulse');
 
-            setTimeout(() => {
-                boltTrack.style.opacity = '0';
-                wrapper.classList.remove('discharge-pulse');
-                
-                if (isOpen) {
-                    wrapper.classList.remove('active-frame');
-                    contentPanel.style.display = 'none';
+                iterationIdx++;
+                if (iterationIdx < 8) {
+                    requestAnimationFrame(runLightningBurst);
                 } else {
-                    wrapper.classList.add('active-frame');
-                    contentPanel.style.display = 'block';
+                    canvas.style.opacity = '0';
+                    if (isOpen) {
+                        wrapper.classList.remove('active-frame');
+                        contentPanel.style.display = 'none';
+                        if(indicator) indicator.innerText = '[+]';
+                    } else {
+                        wrapper.classList.add('active-frame');
+                        contentPanel.style.display = 'block';
+                        if(indicator) indicator.innerText = '[-]';
+                    }
                 }
-            }, 250);
+            }
+            runLightningBurst();
         }
 
         function recalculateTelemetry(val) {
