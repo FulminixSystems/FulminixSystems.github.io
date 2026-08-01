@@ -15,6 +15,7 @@
             --accent-blue: #2563eb;
             --slate-forest-green: #1a3a3a;
             --subtle-text: #b0b8c4;
+            --logo-offwhite: #e8eef7;
         }
 
         body {
@@ -34,37 +35,43 @@
         }
 
         header {
-            background-image: linear-gradient(rgba(10, 15, 29, 0.3), rgba(10, 15, 29, 0.3)), url('header-bg.jpg');
+            background-image: linear-gradient(rgba(10, 15, 29, 0.25), rgba(10, 15, 29, 0.25)), url('header-bg.jpg');
             background-size: cover;
             background-position: center;
-            border: 1px solid var(--accent-green);
-            padding: 80px 25px 35px 25px; 
-            margin-bottom: 35px;
+            background-attachment: fixed;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            padding: 80px 25px 0px 25px;
+            margin-bottom: 0;
             text-align: center;
-            border-radius: 4px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 0;
+            box-shadow: none;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            min-height: 160px;
+            min-height: 200px;
+            position: relative;
         }
 
         .subtitle {
-            color: var(--slate-forest-green);
-            font-size: 11px;
+            color: var(--logo-offwhite);
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 3px;
             font-weight: bold;
-            background-color: rgba(10, 15, 29, 0.7);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            padding: 11px 18px;
-            border-radius: 25px;
-            border: 1px solid rgba(16, 185, 129, 0.4);
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4), 0 0 12px rgba(16, 185, 129, 0.15);
+            background-color: rgba(26, 58, 58, 0.85);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 16px 20px;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
             margin: 0;
-            max-width: 90%;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            text-align: center;
+            position: relative;
         }
 
         /* 🎬 ZONE 1: COLOR-SHIFTING SLOGAN MODULE */
@@ -305,8 +312,8 @@
 
         @media (max-width: 600px) {
             .container { padding: 20px 12px; }
-            header { padding: 60px 15px 25px 15px; margin-bottom: 25px; }
-            .subtitle { font-size: 10px; letter-spacing: 1.5px; padding: 8px 12px; }
+            header { padding: 60px 15px 0px 15px; margin-bottom: 25px; }
+            .subtitle { font-size: 11px; letter-spacing: 1.5px; padding: 12px 15px; }
             .slogan-frame-container { padding: 15px 20px; margin: 25px auto; max-width: 100%; width: 100%; }
             .top-phrase, .bottom-phrase { font-size: 11px; letter-spacing: 1px; }
             .status-bar { font-size: 10px; padding: 9px; margin-bottom: 30px; line-height: 1.5; white-space: normal; word-break: break-word; }
@@ -320,11 +327,11 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="subtitle">Bare-Metal Data Transport & Core Ingestion Engines</div>
-        </header>
+    <header>
+        <div class="subtitle">Bare-Metal Data Transport & Core Ingestion Engines</div>
+    </header>
 
+    <div class="container">
         <div class="slogan-frame-container">
             <div class="top-phrase">The Power of Now</div>
             <div class="center-connector">&lt;-- Meets --&gt;</div>
