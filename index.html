@@ -12,54 +12,57 @@
             --lightning-glow: #34d399;
             --border-color: #1f2937;
             --card-bg: #111827;
+            --accent-blue: #2563eb;
+            --slate-forest-green: #1a3a3a;
+            --subtle-text: #b0b8c4;
         }
 
         body {
             font-family: 'Courier New', Courier, monospace;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.7;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
 
         .container {
-            max-width: 950px;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 15px;
         }
 
         header {
             background-image: linear-gradient(rgba(10, 15, 29, 0.3), rgba(10, 15, 29, 0.3)), url('header-bg.jpg');
             background-size: cover;
             background-position: center;
-            border: 1px solid var(--border-color);
-            padding: 120px 30px 50px 30px; 
-            margin-bottom: 50px;
+            border: 1px solid var(--accent-green);
+            padding: 80px 25px 35px 25px; 
+            margin-bottom: 35px;
             text-align: center;
-            border-radius: 6px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            border-radius: 4px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            min-height: 200px;
+            min-height: 160px;
         }
 
         .subtitle {
-            color: #fff;
-            font-size: 13px;
+            color: var(--slate-forest-green);
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             font-weight: bold;
-            background-color: rgba(10, 15, 29, 0.75);
+            background-color: rgba(10, 15, 29, 0.7);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            padding: 14px 24px;
-            border-radius: 30px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(16, 185, 129, 0.2);
+            padding: 11px 18px;
+            border-radius: 25px;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4), 0 0 12px rgba(16, 185, 129, 0.15);
             margin: 0;
             max-width: 90%;
         }
@@ -71,9 +74,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 50px auto;
-            padding: 30px 50px;
-            max-width: 580px;
+            margin: 35px auto;
+            padding: 20px 40px;
+            max-width: 520px;
             text-align: center;
             border-radius: 4px;
             box-sizing: border-box;
@@ -97,12 +100,12 @@
         }
 
         .top-phrase {
-            color: #fff;
-            font-size: 15px;
+            color: var(--subtle-text);
+            font-size: 13px;
             font-weight: bold;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             opacity: 0;
             animation: dropDownText 0.8s cubic-bezier(0.1, 0.9, 0.2, 1) 0.2s forwards,
                        shiftToDarkGreen 0.5s ease-out 1.5s forwards;
@@ -110,22 +113,22 @@
 
         .center-connector {
             color: var(--lightning-glow);
-            font-size: 13px;
+            font-size: 11px;
             font-weight: bold;
             letter-spacing: 2px;
-            margin: 6px 0;
+            margin: 5px 0;
             opacity: 0;
             animation: fadeInConnector 0.5s ease-out 0.8s forwards,
                        shiftToMetallicGold 0.5s ease-out 1.5s forwards;
         }
 
         .bottom-phrase {
-            color: #fff;
-            font-size: 15px;
+            color: var(--subtle-text);
+            font-size: 13px;
             font-weight: bold;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-top: 8px;
+            margin-top: 6px;
             opacity: 0;
             animation: raceInLeftText 0.8s cubic-bezier(0.1, 0.9, 0.2, 1) 0.5s forwards,
                        shiftToDarkBlue 0.5s ease-out 1.5s forwards;
@@ -147,39 +150,40 @@
         }
 
         @keyframes drawFullLoop {
-            0% { background: conic-gradient(from 0deg, var(--accent-blue) 0%, transparent 10%); opacity: 1; }
-            99% { background: conic-gradient(from 360deg, var(--accent-blue) 0%, transparent 100%); opacity: 1; }
+            0% { background: conic-gradient(from 0deg, var(--accent-green) 0%, transparent 10%); opacity: 1; }
+            99% { background: conic-gradient(from 360deg, var(--accent-green) 0%, transparent 100%); opacity: 1; }
             100% { background: none; opacity: 0; }
         }
 
         @keyframes traceCircuitAndGlow {
-            0% { background-color: rgba(11, 24, 43, 0); border: 1px solid transparent; box-shadow: 0 0 0 rgba(37, 99, 235, 0); }
-            60% { background-color: rgba(17, 24, 39, 0.4); border: 1px solid transparent; }
-            100% { background-color: #111827; border: 1px solid var(--accent-blue); box-shadow: 0 0 20px rgba(37, 99, 235, 0.25); }
+            0% { background-color: rgba(11, 24, 43, 0); border: 1px solid transparent; box-shadow: 0 0 0 rgba(16, 185, 129, 0); }
+            60% { background-color: rgba(17, 24, 39, 0.3); border: 1px solid transparent; }
+            100% { background-color: #111827; border: 1px solid var(--accent-green); box-shadow: 0 0 15px rgba(16, 185, 129, 0.2); }
         }
 
-        @keyframes shiftToDarkBlue { 100% { color: #1e3a8a; text-shadow: none; } }
+        @keyframes shiftToDarkBlue { 100% { color: #b0b8c4; text-shadow: none; } }
         @keyframes shiftToMetallicGold { 100% { color: #dfb15b; text-shadow: 0 0 10px rgba(223, 177, 91, 0.5); } }
+        @keyframes shiftToDarkGreen { 100% { color: #b0b8c4; text-shadow: none; } }
 
         .status-bar {
-            background-color: rgba(37, 99, 235, 0.04);
-            border: 1px solid var(--accent-blue);
+            background-color: rgba(16, 185, 129, 0.04);
+            border: 1px solid var(--accent-green);
             color: var(--lightning-glow);
-            padding: 14px 20px;
-            font-size: 13px;
-            margin-bottom: 60px;
+            padding: 11px 16px;
+            font-size: 12px;
+            margin-bottom: 45px;
             border-radius: 4px;
-            letter-spacing: 1px;
-            box-shadow: inset 0 0 10px rgba(37, 99, 235, 0.05);
+            letter-spacing: 0.5px;
+            box-shadow: inset 0 0 8px rgba(16, 185, 129, 0.03);
         }
         /* 🏛️ SECURE COLLAPSIBLE MASTER ZONE HEADER STYLING */
         .collapsible-section-wrapper {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .section-header-trigger {
             background-color: transparent;
-            padding: 15px 0;
+            padding: 12px 0;
             cursor: pointer;
             position: relative;
             user-select: none;
@@ -195,49 +199,49 @@
             color: var(--lightning-glow);
             font-weight: bold;
             font-family: monospace;
-            font-size: 18px;
-            margin-top: 2px;
+            font-size: 16px;
+            margin-top: 1px;
             transition: transform 0.3s ease;
         }
 
         .collapsible-section-wrapper.section-open .section-indicator {
             transform: rotate(90deg);
-            color: #fff;
+            color: var(--accent-green);
         }
 
         .section-content-block {
             display: none;
-            padding-top: 30px;
+            padding-top: 20px;
         }
 
         h2 {
-            color: #fff;
-            font-size: 20px;
-            letter-spacing: 2px;
+            color: var(--subtle-text);
+            font-size: 17px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            border-left: 4px solid var(--accent-blue);
-            padding-left: 15px;
+            border-left: 3px solid var(--accent-green);
+            padding-left: 12px;
         }
 
-        p { font-size: 14px; color: #9ca3af; text-align: justify; margin-bottom: 20px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .full-width-stack { display: flex; flex-direction: column; gap: 30px; }
+        p { font-size: 13px; color: #8b95a5; text-align: justify; margin-bottom: 15px; line-height: 1.5; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .full-width-stack { display: flex; flex-direction: column; gap: 20px; }
 
-        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; gap: 20px; } }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; gap: 15px; } }
 
         /* ⚡ TRUE CANVAS VECTOR INTERFACE SYSTEMS */
         .card-wrapper {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 4px;
+            border-radius: 3px;
             position: relative;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
             overflow: hidden;
             transition: border-color 0.25s ease;
         }
 
         .card-header-trigger {
-            padding: 25px;
+            padding: 18px;
             cursor: pointer;
             position: relative;
             user-select: none;
@@ -255,61 +259,63 @@
         }
 
         .card-title-row { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 6; }
-        .card-title { color: #fff; font-weight: bold; font-size: 15px; letter-spacing: 1px; text-transform: uppercase; margin: 0; }
-        .expand-indicator { color: var(--lightning-glow); font-size: 12px; font-weight: bold; font-family: monospace; transition: all 0.3s ease; }
+        .card-title { color: var(--subtle-text); font-weight: bold; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; margin: 0; }
+        .expand-indicator { color: var(--lightning-glow); font-size: 11px; font-weight: bold; font-family: monospace; transition: all 0.3s ease; }
 
         .card-wrapper.active-frame .expand-indicator {
             transform: rotate(90deg);
-            color: #fff;
+            color: var(--accent-green);
         }
 
         .card-wrapper.active-frame {
-            border-color: var(--border-color);
+            border-color: var(--accent-green);
         }
 
         .card-content-panel {
-            padding: 0 25px 25px 25px;
+            padding: 0 18px 18px 18px;
             display: none;
             border-top: 1px dashed var(--border-color);
-            margin-top: 5px;
-            padding-top: 20px;
+            margin-top: 4px;
+            padding-top: 15px;
             position: relative;
             z-index: 6;
         }
 
-        .tech-label { display: block; font-size: 11px; color: var(--lightning-glow); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: bold; position: relative; z-index: 6; }
+        .tech-label { display: block; font-size: 10px; color: var(--lightning-glow); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: bold; position: relative; z-index: 6; }
 
         /* 📊 ZONE 3.5 PERMANENT RECOUP TELEMETRY ANCHOR */
-        .emulator-terminal { background-color: #060b13; border: 1px solid #1f2937; border-radius: 4px; padding: 20px; margin: 40px auto 60px auto; font-family: monospace; box-shadow: inset 0 0 15px rgba(0,0,0,0.8); }
-        .emulator-header { color: #4b5563; font-size: 11px; text-transform: uppercase; margin-bottom: 15px; border-bottom: 1px solid #1f2937; padding-bottom: 6px; display: flex; justify-content: space-between; }
-        .workload-slider-wrapper { margin: 20px 0; background: #111827; padding: 15px; border-radius: 4px; border: 1px solid #1f2937; }
-        .slider-label-row { display: flex; justify-content: space-between; font-size: 12px; color: #9ca3af; margin-bottom: 8px; }
-        .metrics-output-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px; }
-        .metric-telemetry-box { background: #0d1527; border: 1px solid #1f2937; padding: 10px; border-radius: 2px; text-align: center; }
-        .telemetry-val { color: var(--lightning-glow); font-size: 14px; font-weight: bold; text-shadow: 0 0 6px rgba(37,99,235,0.3); }
-        .telemetry-lbl { font-size: 10px; color: #4b5563; text-transform: uppercase; margin-top: 4px; }
-        .workload-range-input { width: 100%; -webkit-appearance: none; background: #1f2937; height: 4px; border-radius: 2px; outline: none; }
-        .workload-range-input::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: var(--lightning-glow); cursor: pointer; box-shadow: 0 0 8px var(--lightning-glow); }
+        .emulator-terminal { background-color: #060b13; border: 1px solid var(--accent-green); border-radius: 3px; padding: 15px; margin: 30px auto 45px auto; font-family: monospace; box-shadow: inset 0 0 12px rgba(16, 185, 129, 0.05); max-width: 850px; }
+        .emulator-header { color: #4b5563; font-size: 10px; text-transform: uppercase; margin-bottom: 12px; border-bottom: 1px solid #1f2937; padding-bottom: 5px; display: flex; justify-content: space-between; }
+        .workload-slider-wrapper { margin: 15px 0; background: #111827; padding: 12px; border-radius: 3px; border: 1px solid #1f2937; }
+        .slider-label-row { display: flex; justify-content: space-between; font-size: 11px; color: #8b95a5; margin-bottom: 6px; }
+        .metrics-output-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+        .metric-telemetry-box { background: #0d1527; border: 1px solid #1f2937; padding: 8px; border-radius: 2px; text-align: center; }
+        .telemetry-val { color: var(--lightning-glow); font-size: 12px; font-weight: bold; text-shadow: 0 0 5px rgba(16, 185, 129, 0.2); }
+        .telemetry-lbl { font-size: 9px; color: #4b5563; text-transform: uppercase; margin-top: 3px; }
+        .workload-range-input { width: 100%; -webkit-appearance: none; background: #1f2937; height: 3px; border-radius: 2px; outline: none; }
+        .workload-range-input::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-green); cursor: pointer; box-shadow: 0 0 6px rgba(16, 185, 129, 0.5); }
+        .workload-range-input::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: var(--accent-green); cursor: pointer; box-shadow: 0 0 6px rgba(16, 185, 129, 0.5); border: none; }
 
-        .cta-header-block { text-align: center; margin-top: 60px; margin-bottom: 20px; }
-        .cta-headline { color: #fff; font-size: 22px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; text-shadow: 0 0 10px rgba(37, 99, 235, 0.3); }
-        .cta-subtext { font-size: 13px; color: #9ca3af; letter-spacing: 1px; }
-        .secure-contact-box { background-color: var(--card-bg); border: 1px dashed rgba(37, 99, 235, 0.4); padding: 25px; border-radius: 4px; text-align: center; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); }
-        .contact-channel { color: var(--lightning-glow); font-weight: bold; font-size: 15px; letter-spacing: 1px; }
-        footer { margin-top: 80px; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 12px; color: #4b5563; text-align: center; letter-spacing: 1px; }
+        .cta-header-block { text-align: center; margin-top: 45px; margin-bottom: 15px; }
+        .cta-headline { color: var(--subtle-text); font-size: 18px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; text-shadow: 0 0 8px rgba(16, 185, 129, 0.15); }
+        .cta-subtext { font-size: 12px; color: #8b95a5; letter-spacing: 0.5px; }
+        .secure-contact-box { background-color: var(--card-bg); border: 1px solid var(--accent-green); padding: 18px; border-radius: 3px; text-align: center; box-shadow: 0 3px 15px rgba(16, 185, 129, 0.1); }
+        .contact-channel { color: var(--accent-green); font-weight: bold; font-size: 13px; letter-spacing: 0.5px; }
+        footer { margin-top: 60px; border-top: 1px solid var(--border-color); padding-top: 20px; font-size: 11px; color: #4b5563; text-align: center; letter-spacing: 0.5px; }
 
         @media (max-width: 600px) {
-            .container { padding: 20px 15px; }
-            header { padding: 80px 15px 30px 15px; margin-bottom: 30px; }
-            .subtitle { font-size: 11px; letter-spacing: 2px; padding: 10px 16px; }
-            .slogan-frame-container { padding: 20px 15px; margin: 30px auto; max-width: 100%; width: 100%; }
+            .container { padding: 20px 12px; }
+            header { padding: 60px 15px 25px 15px; margin-bottom: 25px; }
+            .subtitle { font-size: 10px; letter-spacing: 1.5px; padding: 8px 12px; }
+            .slogan-frame-container { padding: 15px 20px; margin: 25px auto; max-width: 100%; width: 100%; }
             .top-phrase, .bottom-phrase { font-size: 11px; letter-spacing: 1px; }
-            .status-bar { font-size: 11px; padding: 12px; margin-bottom: 40px; line-height: 1.5; white-space: normal; word-break: break-word; }
-            .grid { grid-template-columns: 1fr; gap: 20px; }
-            .card-header-trigger { padding: 18px 15px; }
-            .card-title { font-size: 13px; }
-            .metrics-output-row { grid-template-columns: 1fr; gap: 10px; }
-            .cta-headline { font-size: 16px; letter-spacing: 1px; line-height: 1.4; }
+            .status-bar { font-size: 10px; padding: 9px; margin-bottom: 30px; line-height: 1.5; white-space: normal; word-break: break-word; }
+            .grid { grid-template-columns: 1fr; gap: 15px; }
+            .card-header-trigger { padding: 14px 12px; }
+            .card-title { font-size: 12px; }
+            .metrics-output-row { grid-template-columns: 1fr; gap: 8px; }
+            .cta-headline { font-size: 14px; letter-spacing: 1px; line-height: 1.3; }
+            h2 { font-size: 15px; letter-spacing: 1px; padding-left: 10px; border-left-width: 2px; }
         }
     </style>
 </head>
@@ -332,7 +338,7 @@
         <section>
             <h2>Architectural Overview</h2>
             <p>
-                Fulminix Systems engineers high-performance, native application-layer data transport solutions built for mission-critical enterprise environments. We focus entirely on eliminating pipeline bottlenecks, allowing core network fabrics and high-frequency streaming infrastructure to achieve optimal line-rate processing capacity under volatile workload demands.
+                Fulminix Systems engineers high-performance, native application-layer data transport solutions built for mission-critical enterprise environments. We focus entirely on eliminating blocking I/O bottlenecks, reducing latency below microsecond thresholds, and delivering deterministic throughput at scale. Our hardware-embedded design patterns ensure zero-copy memory operations and direct CPU-to-wire acceleration for maximum efficiency.
             </p>
         </section>
         <!-- ZONE 2: COMPUTATIONAL PERFORMANCE CRITERIA (COLLAPSIBLE MASTER BLOCK) -->
@@ -354,8 +360,8 @@
                             </div>
                         </div>
                         <div class="card-content-panel">
-                            <p><strong>Problem:</strong> Traditional network serialization frameworks and heavy abstraction layers introduce crushing application-level decoding bottlenecks when high-velocity traffic spikes hit core systems.</p>
-                            <p><strong>Solution:</strong> The engine processes mission-critical hardware data streams inside active memory registers within a native 10-45 microsecond threshold, shifting execution straight to the bare metal [USER-CONTEXT].</p>
+                            <p><strong>Problem:</strong> Traditional network serialization frameworks and heavy abstraction layers introduce crushing application-level decoding bottlenecks when handling high-frequency market data or mission-critical sensor telemetry streams.</p>
+                            <p><strong>Solution:</strong> The engine processes mission-critical hardware data streams inside active memory registers within a native 10-45 microsecond threshold, substantially eliminating jitter and guaranteeing deterministic execution patterns across scaling conditions.</p>
                         </div>
                     </div>
 
@@ -369,8 +375,8 @@
                             </div>
                         </div>
                         <div class="card-content-panel">
-                            <p><strong>Problem:</strong> Standard serialized data queues hit absolute performance thresholds under multi-gigabit workloads, forcing system resource starvation and degrading downstream services.</p>
-                            <p><strong>Solution:</strong> Delivers an authenticated 50x to 100x execution velocity increase compared to legacy setups, guaranteeing deep corporate logic receive completely un-throttled transport channels.</p>
+                            <p><strong>Problem:</strong> Standard serialized data queues hit absolute performance thresholds under multi-gigabit workloads, forcing system resource starvation and catastrophic throughput collapse at critical network saturation moments.</p>
+                            <p><strong>Solution:</strong> Delivers an authenticated 50x to 100x execution velocity increase compared to legacy setups, guaranteeing deep corporate logic receives complete dataset ingestion at wire-speed performance levels without process throttling.</p>
                         </div>
                     </div>
                 </div>
@@ -396,8 +402,8 @@
                             </div>
                         </div>
                         <div class="card-content-panel">
-                            <p><strong>Problem:</strong> Public-facing ingestion points are highly vulnerable to volumetric flood thrashing, malformed packet injection attacks, and malicious memory manipulation.</p>
-                            <p><strong>Solution:</strong> Enforces deterministic edge parsing directly at the socket doorstep, instantly neutralizing malformed payloads on the first clock cycle before they ever trigger memory allocations [USER-CONTEXT].</p>
+                            <p><strong>Problem:</strong> Public-facing ingestion points are highly vulnerable to volumetric flood thrashing, malformed packet injection attacks, and malicious memory exhaustion exploits targeting unguarded network boundaries.</p>
+                            <p><strong>Solution:</strong> Enforces deterministic edge parsing directly at the socket doorstep, instantly neutralizing malformed payloads on the first clock cycle before they penetrate the core processing substrate.</p>
                         </div>
                     </div>
 
@@ -411,8 +417,8 @@
                             </div>
                         </div>
                         <div class="card-content-panel">
-                            <p><strong>Problem:</strong> Interfacing high-level codebases with native low-level libraries across a Foreign Function Interface routinely introduces critical memory leaks and unstable runtime hazards.</p>
-                            <p><strong>Solution:</strong> Establishes a hardened, isolated boundary layer that locks cross-runtime calls into verified execution spaces, eliminating memory faults and common multi-language interface risks.</p>
+                            <p><strong>Problem:</strong> Interfacing high-level codebases with native low-level libraries across a Foreign Function Interface routinely introduces critical memory leakage vulnerabilities and buffer overflow pathways.</p>
+                            <p><strong>Solution:</strong> Establishes a hardened, isolated boundary layer that locks cross-runtime calls into verified execution spaces, eliminating memory faults and preventing unauthorized register state corruption.</p>
                         </div>
                     </div>
 
@@ -426,8 +432,8 @@
                             </div>
                         </div>
                         <div class="card-content-panel">
-                            <p><strong>Problem:</strong> Sudden network drops, unhandled data lane exceptions, or individual thread panics normally chain into systemic backpressure loops or catastrophic global server crashes.</p>
-                            <p><strong>Solution:</strong> Integrates advanced, asynchronous real-time tracking that catches and zeroes data corruption anomalies cleanly at the lane boundary, ensuring 100% operational uptime for the primary fabric [USER-CONTEXT].</p>
+                            <p><strong>Problem:</strong> Sudden network drops, unhandled data lane exceptions, or individual thread panics normally chain into systemic backpressure loops or catastrophic cascade failures across distributed clusters.</p>
+                            <p><strong>Solution:</strong> Integrates advanced, asynchronous real-time tracking that catches and zeroes data corruption anomalies cleanly at the lane boundary, ensuring system stability even under extreme stress conditions.</p>
                         </div>
                     </div>
 
@@ -441,8 +447,8 @@
                             </div>
                         </div>
                         <div class="card-content-panel">
-                            <p><strong>Problem:</strong> Deploying infrastructure patches or upgrading data architectures forces massive corporate networks to endure expensive host service downtime and cluster recycling loops.</p>
-                            <p><strong>Solution:</strong> Engineered with a hot-swappable, in-line insertion blueprint that plugs directly into live production environments, requiring absolutely zero network resets or operational stoppages.</p>
+                            <p><strong>Problem:</strong> Deploying infrastructure patches or upgrading data architectures forces massive corporate networks to endure expensive host service downtime and extended maintenance windows.</p>
+                            <p><strong>Solution:</strong> Engineered with a hot-swappable, in-line insertion blueprint that plugs directly into live production environments, requiring absolutely zero host process interruption or service state resets.</p>
                         </div>
                     </div>
                 </div>
@@ -471,7 +477,7 @@
                 <div class="telemetry-lbl">HARDWARE CONSOLIDATION</div>
             </div>
             <div class="metric-telemetry-box">
-                <div class="telemetry-val" id="t-drop" style="color: var(--accent-blue);">0.0000 %</div>
+                <div class="telemetry-val" id="t-drop" style="color: var(--accent-green);">0.0000 %</div>
                 <div class="telemetry-lbl">PACKET RETENTION RATE</div>
             </div>
         </div>
@@ -497,8 +503,8 @@
                             </div>
                         </div>
                         <div class="card-content-panel">
-                            <p><strong>Problem:</strong> Scaling data capacity traditionally requires renting sprawling cloud clusters or massive server rack arrays, ballooning annual operational expenditures (OpEx).</p>
-                            <p><strong>Solution:</strong> Compresses required server hardware capacity and background processing overhead by 70-75%, allowing enterprise networks to multiply throughput while slashing infrastructure footprints.</p>
+                            <p><strong>Problem:</strong> Scaling data capacity traditionally requires renting sprawling cloud clusters or massive server rack arrays, ballooning annual operational budgets and creating vendor lock-in dependencies.</p>
+                            <p><strong>Solution:</strong> Compresses required server hardware capacity and background processing overhead by 70-75%, allowing enterprise networks to multiply throughput without proportional infrastructure expansion costs.</p>
                         </div>
                     </div>
 
@@ -512,8 +518,8 @@
                             </div>
                         </div>
                         <div class="card-content-panel">
-                            <p><strong>Problem:</strong> Surges in dynamic request volumes trigger memory fragment bottlenecks inside standard operating system heap allocators, inducing system stutter and latency drops.</p>
-                            <p><strong>Solution:</strong> Hooks natively into an integrated Microsoft mimalloc hub to enforce secure thread isolation limits and achieve ultra-stable performance scaling across bare-metal environments [USER-CONTEXT].</p>
+                            <p><strong>Problem:</strong> Surges in dynamic request volumes trigger memory fragment bottlenecks inside standard operating system heap allocators, inducing system stutter and cache coherency stalls.</p>
+                            <p><strong>Solution:</strong> Hooks natively into an integrated Microsoft mimalloc hub to enforce secure thread isolation limits and achieve ultra-stable performance signatures even under chaotic demand spikes.</p>
                         </div>
                     </div>
                 </div>
@@ -539,8 +545,8 @@
                             </div>
                         </div>
                         <div class="card-content-panel">
-                            <p><strong>Problem:</strong> Traditional infrastructure layers encounter structural trace desyncs and gradual memory drift, violating rigorous corporate Service Level Agreements (SLAs).</p>
-                            <p><strong>Solution:</strong> Enforces an absolute 99.999% processing availability parameter, absorbing volatile load drops without structural stutter periods [GOOGLE].</p>
+                            <p><strong>Problem:</strong> Traditional infrastructure layers encounter structural trace desyncs and gradual memory drift, violating rigorous corporate Service Level Agreements and triggering expensive breach penalties.</p>
+                            <p><strong>Solution:</strong> Enforces an absolute 99.999% processing availability parameter, absorbing volatile load drops without structural stutter periods or service interruption vectors.</p>
                         </div>
                     </div>
 
@@ -555,7 +561,7 @@
                         </div>
                         <div class="card-content-panel">
                             <p><strong>Problem:</strong> Legacy frameworks fail to integrate smoothly across strict corporate environments, introducing auditing friction and deployment obstacles.</p>
-                            <p><strong>Solution:</strong> Compiles natively into standalone binary assets optimized for Windows Server kernels and RHEL clusters, incorporating immediate cryptographic zeroization routines.</p>
+                            <p><strong>Solution:</strong> Compiles natively into standalone binary assets optimized for Windows Server kernels and RHEL clusters, incorporating immediate cryptographic validation and regulatory compliance checksums.</p>
                         </div>
                     </div>
 
@@ -569,8 +575,8 @@
                             </div>
                         </div>
                         <div class="card-content-panel">
-                            <p><strong>Problem:</strong> High-velocity applications operate as unmonitored tracking blocks, preventing network technicians from diagnosing hidden path choke points.</p>
-                            <p><strong>Solution:</strong> Integrates dedicated telemetry pathways that stream performance tracking diagnostics straight to analytics frameworks without adding core thread blocking.</p>
+                            <p><strong>Problem:</strong> High-velocity applications operate as unmonitored tracking blocks, preventing network technicians from diagnosing hidden path choke points and performance anomalies.</p>
+                            <p><strong>Solution:</strong> Integrates dedicated telemetry pathways that stream performance tracking diagnostics straight to analytics frameworks without adding core processing latency or measurement overhead.</p>
                         </div>
                     </div>
 
@@ -584,13 +590,18 @@
                             </div>
                         </div>
                         <div class="card-content-panel">
-                            <p><strong>Problem:</strong> Enterprise platforms are constantly exposed to unexpected software overhead and open-ended modification cycles from third-party vendor platforms.</p>
-                            <p><strong>Solution:</strong> Restricts interaction exclusively to hardware-locked compiled payloads, ensuring rigid operational scope boundaries and absolute design protection.</p>
+                            <p><strong>Problem:</strong> Enterprise platforms are constantly exposed to unexpected software overhead and open-ended modification cycles from third-party vendor platforms and integration layers.</p>
+                            <p><strong>Solution:</strong> Restricts interaction exclusively to hardware-locked compiled payloads, ensuring rigid operational scope boundaries and absolute design purity free from runtime surprises.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- ZONE 6: ENTERPRISE SANDBOX ANCHOR (PERMANENTLY FLAT & OPEN) -->
         <section>
             <h2>Enterprise Sandbox Engagement</h2>
             <p>
-                Fulminix Systems operates exclusively under private architectural staging agreements. To maintain strict security boundaries and protect proprietary engineering models, we do not provide public access to source code repositories, evaluation binaries, or low-level documentation. Strategic configurations are initialized only after identity verification and the execution of a Mutual Non-Disclosure Agreement (NDA).
+                Fulminix Systems operates exclusively under private architectural staging agreements. To maintain strict security boundaries and protect proprietary engineering models, we do not publish public API specifications or open-source reference implementations. Enterprise clients receive hardened binary distributions and full source code access under confidential technical partnership agreements.
             </p>
         </section>
 
