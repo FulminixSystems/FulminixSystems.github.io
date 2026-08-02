@@ -81,20 +81,16 @@
 
 /* --- LINE BEFORE: .subtitle { ... position: relative; } --- */
 
-.header-spacer { 
-    height: 280px; 
-    width: 100%; 
-}
-
-/* 🎬 ZONE 1: BARE-METAL VECTOR SLOGAN ARCHITECTURE */
+.header-spacer { height: 280px; width: 100%; }
 .slogan-container { 
     position: absolute; 
-    bottom: 55px; /* Floats the text row precisely up onto the background graphic */ 
+    bottom: 75px; 
     left: 0; 
     width: 100%; 
     pointer-events: none; 
-    z-index: 1000; /* Ensures the text layer remains safely on top of the image */ 
-} 
+    z-index: 1000; 
+}
+        
 .slogan-container .left-phrase { 
     position: absolute; 
     left: 12vw; /* Pins the phrase cleanly over your left circuit paths */ 
@@ -103,7 +99,7 @@
     letter-spacing: 1.5px; 
     color: var(--lightning-glow); 
     will-change: transform, opacity; 
-    animation: slideToLeftLightning 1.5s ease-out forwards; 
+    animation: slideToLeftLightning 1.5s ease-out forwards; }
 } 
 .slogan-container .right-phrase { 
     position: absolute; 
@@ -113,8 +109,10 @@
     letter-spacing: 1.5px; 
     color: var(--lightning-glow); 
     will-change: transform, opacity; 
-    animation: slideToRightLightning 1.5s ease-out forwards; 
+    animation: slideToRightLightning 1.5s ease-out forwards;
+    transform-origin: right;
 } 
+        
 @keyframes slideToLeftLightning { 
     0% { opacity: 0; transform: translateX(-100px); } 
     100% { opacity: 1; transform: translateX(0); } 
