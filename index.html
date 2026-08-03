@@ -62,13 +62,13 @@
     position: absolute;
     top: 80px;
     left: 0;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    gap: 100px;
     align-items: center;
-    width: 100%;
-    padding: 0 16%;
+    gap: 170px;
+    padding: 0 10%;
+    box-sizing: border-box;
     pointer-events: none;
     z-index: 1000;
 }
@@ -79,7 +79,7 @@
     letter-spacing: 1.5px;
     color: var(--lightning-glow);
     will-change: transform, opacity;
-    margin-left: 120px;
+    white-space: nowrap;
     animation: slideToLeftLightning 1.5s ease-out forwards;
 }
 
@@ -89,20 +89,19 @@
     letter-spacing: 1.5px;
     color: var(--lightning-glow);
     will-change: transform, opacity;
+    white-space: nowrap;
     animation: slideToRightLightning 1.5s ease-out forwards;
-    transform-origin: right;
 }
 
 @keyframes slideToLeftLightning {
-    0% { opacity: 0; transform: translateX(-100px); }
+    0% { opacity: 0; transform: translateX(-120px); }
     100% { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideToRightLightning {
-    0% { opacity: 0; transform: translateX(50px); } /* Adjust the initial position */
-    100% { opacity: 1; transform: translateX(0); }
+    0% { opacity: 0; transform: translateX(120px); }
+    100% { opacity: 1; transform: translateX(30px); }
 }
-
         .subtitle {
             color: var(--logo-offwhite);
             font-size: 13px;
