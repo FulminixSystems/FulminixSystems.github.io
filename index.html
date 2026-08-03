@@ -101,27 +101,28 @@
     will-change: transform, opacity; 
     animation: slideToLeftLightning 1.5s ease-out forwards; }
 } 
+/* --- LINE BEFORE: .slogan-container .left-phrase { position: absolute; left: 12vw; ... } --- */
 .slogan-container .right-phrase { 
-    position: absolute; 
-    right: 12vw; /* Pins the phrase cleanly over your right circuit paths */ 
-    font-family: monospace; 
-    font-size: 13px; 
-    letter-spacing: 1.5px; 
-    color: var(--lightning-glow); 
+    position: absolute; right: 12vw; 
+    font-family: monospace; font-size: 13px; 
+    letter-spacing: 1.5px; color: var(--lightning-glow); 
     will-change: transform, opacity; 
-    animation: slideToRightLightning 1.5s ease-out forwards;
-    transform-origin: right;
-} 
+    animation: slideToRightLightning 1.5s ease-out forwards; 
+    transform-origin: right; 
+}
+/* --- LINE AFTER: @keyframes slideToLeftLightning { --- */
         
 @keyframes slideToLeftLightning { 
     0% { opacity: 0; transform: translateX(-100px); } 
     100% { opacity: 1; transform: translateX(0); } 
 } 
+/* --- LINE BEFORE: @keyframes slideToLeftLightning { 0% { opacity: 0; transform: translateX(-100px); } 100% { opacity: 1; transform: translateX(0); } } --- */
 @keyframes slideToRightLightning { 
-    0% { opacity: 0; transform: translateX(100px); 
-        color: var(--lightning-glow); } 100% { opacity: 1; 
-        transform: translateX(380px); color: var(--lightning-glow); } 
+    0% { opacity: 0; transform: translateX(100px); color: var(--lightning-glow); } 
+    100% { opacity: 1; transform: translateX(0); color: var(--lightning-glow); } 
 }
+/* --- LINE AFTER: .status-bar { --- */
+
 
 .status-bar { 
             background-color: rgba(16, 185, 129, 0.04); 
