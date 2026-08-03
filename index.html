@@ -58,46 +58,44 @@
             right: 0;
             z-index: 999;
         }
-.slogan-container { 
-    position: absolute; 
-    bottom: 75px; 
-    left: 0; 
-    width: 100%; 
-    pointer-events: none; 
-    z-index: 1000; 
+.slogan-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1000;
 }
-        
-.slogan-container .left-phrase { 
-    position: absolute; 
-    left: 12vw; /* Pins the phrase cleanly over your left circuit paths */ 
-    font-family: monospace; 
-    font-size: 13px; 
-    letter-spacing: 1.5px; 
-    color: var(--lightning-glow); 
-    will-change: transform, opacity; 
-    animation: slideToLeftLightning 1.5s ease-out forwards; }
-} 
-/* --- LINE BEFORE: .slogan-container .left-phrase { position: absolute; left: 12vw; ... } --- */
-.slogan-container .right-phrase { 
-    position: absolute; right: 12vw; 
-    font-family: monospace; font-size: 13px; 
-    letter-spacing: 1.5px; color: var(--lightning-glow); 
-    will-change: transform, opacity; 
-    animation: slideToRightLightning 1.5s ease-out forwards; 
-    transform-origin: right; 
+
+.slogan-container .left-phrase {
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: var(--lightning-glow);
+    will-change: transform, opacity;
+    animation: slideToLeftLightning 1.5s ease-out forwards;
 }
-/* --- LINE AFTER: @keyframes slideToLeftLightning { --- */
-        
-@keyframes slideToLeftLightning { 
-    0% { opacity: 0; transform: translateX(-100px); } 
-    100% { opacity: 1; transform: translateX(0); } 
-} 
-/* --- LINE BEFORE: @keyframes slideToLeftLightning { 0% { opacity: 0; transform: translateX(-100px); } 100% { opacity: 1; transform: translateX(0); } } --- */
-@keyframes slideToRightLightning { 
-    0% { opacity: 0; transform: translateX(100px); color: var(--lightning-glow); } 
-    100% { opacity: 1; transform: translateX(0); color: var(--lightning-glow); } 
+
+.slogan-container .right-phrase {
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: var(--lightning-glow);
+    will-change: transform, opacity;
+    animation: slideToRightLightning 1.5s ease-out forwards;
+    transform-origin: right;
 }
-/* --- LINE AFTER: .status-bar { --- */
+
+@keyframes slideToLeftLightning {
+    0% { opacity: 0; transform: translateX(-100px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideToRightLightning {
+    0% { opacity: 0; transform: translateX(50px); } /* Adjust the initial position */
+    100% { opacity: 1; transform: translateX(0); }
+}
 
         .subtitle {
             color: var(--logo-offwhite);
