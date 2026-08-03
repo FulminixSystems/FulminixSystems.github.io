@@ -339,29 +339,33 @@
             h2 { font-size: 15px; letter-spacing: 1px; padding-left: 10px; border-left-width: 2px; }
         }
     
-       /* Base Button Layout */
-.hightech-btn {
+.silicon-core-btn {
   display: inline-block;
   position: relative;
   text-decoration: none;
-  padding: 16px 36px;
-  background-color: #03140d; /* Deep emerald base */
-  border: 1px solid #d4af37; /* Crisp gold outer trace line */
+  padding: 18px 40px;
+  border: 1px solid rgba(214, 175, 55, 0.6);
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(3, 20, 13, 0.8);
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   
-  /* SVG Gold Microchip Silicon Underlay */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='100%25' height='100%25' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cpath d='M0,10 L40,10 L50,20 L150,20 L160,10 L200,10 M0,90 L40,90 L50,80 L150,80 L160,90 L200,90 M30,10 L30,90 M170,10 L170,90 M70,20 L70,80 M130,20 L130,80' stroke='%23d4af37' stroke-width='1' fill='none' stroke-opacity='0.4'/%3E%3Ccircle cx='50' cy='20' r='2' fill='%23d4af37'/%3E%3Ccircle cx='150' cy='20' r='2' fill='%23d4af37'/%3E%3Ccircle cx='50' cy='80' r='2' fill='%23d4af37'/%3E%3Ccircle cx='150' cy='80' r='2' fill='%23d4af37'/%3E%3C/svg%3E");
+  /* LAYER 1: Foreground Brilliant Gold Microchip Bus Lines (SVG) */
+  /* LAYER 2: Background Emerald Green Circuit Geometry & Pads (SVG) */
+  /* LAYER 3: Solid Dark Jade Base Slate */
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='100%25' height='100%25' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cpath d='M10,10 L50,10 L65,25 L135,25 L150,10 L190,10 M25,10 L25,90 M175,10 L175,90 M65,25 L65,75 L135,75 L135,25 M50,50 L150,50' stroke='%23ffd700' stroke-width='1.2' fill='none' stroke-shadow='0 0 4px %23ffd700'/%3E%3Ccircle cx='65' cy='25' r='2' fill='%23ffd700'/%3E%3Ccircle cx='135' cy='25' r='2' fill='%23ffd700'/%3E%3Ccircle cx='65' cy='75' r='2' fill='%23ffd700'/%3E%3Ccircle cx='135' cy='75' r='2' fill='%23ffd700'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='100%25' height='100%25' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Crect x='15' y='35' width='12' height='12' fill='%23004d26' opacity='0.7'/%3E%3Crect x='173' y='35' width='12' height='12' fill='%23004d26' opacity='0.7'/%3E%3Cpath d='M0,30 L40,30 M0,70 L40,70 M160,30 L200,30 M160,70 L200,70' stroke='%23008040' stroke-width='0.8' stroke-dasharray='2,2' fill='none'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #021a0e 0%, #052e18 100%);
+
   background-size: cover;
   background-position: center;
+  box-shadow: inset 0 0 15px rgba(0, 255, 102, 0.15), 0 4px 15px rgba(0,0,0,0.6);
 }
 
-/* Bright Side Borders (Glow Pins) */
-.hightech-btn::before,
-.hightech-btn::after {
+/* Side Glow Terminators (| bars) */
+.silicon-core-btn::before,
+.silicon-core-btn::after {
   content: '';
   position: absolute;
   top: 0;
@@ -369,60 +373,52 @@
   height: 100%;
   background: #00ff66;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.15s ease, cubic-bezier(0.19, 1, 0.22, 1);
 }
-.hightech-btn::before { left: 0; box-shadow: 2px 0 8px #00ff66; }
-.hightech-btn::after { right: 0; box-shadow: -2px 0 8px #00ff66; }
+.silicon-core-btn::before { left: 0; box-shadow: 3px 0 10px #00ff66; }
+.silicon-core-btn::after { right: 0; box-shadow: -3px 0 10px #00ff66; }
 
-/* Imprinted Metallic Typography */
-.btn-text {
+/* Imprinted Typography */
+.matrix-text {
   position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 900;
-  font-size: 14px;
-  letter-spacing: 3px;
-  color: #d4af37; /* Metallic gold */
-  
-  /* Imprinted/Engraved shading effects */
+  z-index: 3;
+  display: block;
+  text-align: center;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #ffd700;
   text-shadow: 
-    -1px -1px 1px #010a06, 
-     1px  1px 1px #ffea85, 
-     0px  0px 4px rgba(212, 175, 55, 0.5);
+    1px 1px 0px #021a0e,
+    -1px -1px 0px rgba(255, 230, 100, 0.4),
+    0 0 6px rgba(255, 215, 0, 0.3);
 }
 
-/* Hover State - Powering Up Trace Lines */
-.hightech-btn:hover {
-  border-color: #ffea85;
-  box-shadow: 0 0 25px rgba(214, 175, 55, 0.4);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='100%25' height='100%25' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cpath d='M0,10 L40,10 L50,20 L150,20 L160,10 L200,10 M0,90 L40,90 L50,80 L150,80 L160,90 L200,90 M30,10 L30,90 M170,10 L170,90 M70,20 L70,80 M130,20 L130,80' stroke='%23ffea85' stroke-width='1.5' fill='none' stroke-opacity='0.8'/%3E%3Ccircle cx='50' cy='20' r='2.5' fill='%23ffea85'/%3E%3Ccircle cx='150' cy='20' r='2.5' fill='%23ffea85'/%3E%3Ccircle cx='50' cy='80' r='2.5' fill='%23ffea85'/%3E%3Ccircle cx='150' cy='80' r='2.5' fill='%23ffea85'/%3E%3C/svg%3E");
+/* Hover - Circuit Excitation */
+.silicon-core-btn:hover {
+  border-color: #ffd700;
+  box-shadow: inset 0 0 20px rgba(0, 255, 102, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+  filter: brightness(1.1);
 }
 
-/* Active Click State - Fractal Lightning Overload */
-.hightech-btn:active {
-  /* Radial lightning blast expanding from center */
+/* Click State - Central Fractal Discharge */
+.silicon-core-btn:active {
   background-image: 
-    radial-gradient(circle, rgba(0,255,102,0.8) 0%, rgba(2,48,25,0.4) 40%, rgba(3,14,13,0) 70%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='100%25' height='100%25' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cpath d='M100,50 L90,40 L110,35 L95,20 L120,15 M100,50 L115,60 L95,65 L105,85 L80,90 M100,50 L75,45 L70,60 L45,55 L20,65 M100,50 L125,45 L135,30 L165,35 L190,25' stroke='%2300ff66' stroke-width='1.5' fill='none' stroke-dasharray='4'/%3E%3C/svg%3E");
-  background-size: cover;
-  
-  /* Trigger the brilliant side bars */
-  border-color: #00ff66;
+    radial-gradient(circle, rgba(0,255,102,0.8) 0%, rgba(5,46,24,0.6) 50%, #021a0e 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='100%25' height='100%25' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cpath d='M100,50 L92,38 L108,30 L93,12 M100,50 L112,65 L90,72 L102,92 M100,50 L70,42 L62,58 L35,50 M100,50 L130,54 L142,38 L175,44' stroke='%2300ff66' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #021a0e 0%, #052e18 100%);
 }
 
-.hightech-btn:active::before,
-.hightech-btn:active::after {
+.silicon-core-btn:active::before,
+.silicon-core-btn:active::after {
   opacity: 1;
 }
 
-.hightech-btn:active .btn-text {
+.silicon-core-btn:active .matrix-text {
   color: #00ff66;
-  text-shadow: 0 0 8px #00ff66;
-} 
-    </style>
+  text-shadow: 0 0 10px #00ff66;
+}    </style>
 </head>
 <body>
         <div class="container">    
@@ -721,8 +717,8 @@
 
 <div class="secure-contact-box">
   <div class="contact-channel">
-    <a href="mailto:mpratt@fulminixsystems.com" class="hightech-btn">
-  <span class="btn-text">CORE CONTACT DESK</span>
+    <a href="mailto:mpratt@fulminixsystems.com" class="silicon-core-btn">
+  <span class="matrix-text">CORE CONTACT DESK</span>
 </a>
 
   </div>
