@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -489,19 +490,19 @@
                 <span>TARGET DEMAND STREAM SCALE:</span>
                 <span id="slider-txt-val" style="color: var(--lightning-glow); font-weight: bold;">10 Gbps LINE-RATE</span>
             </div>
-            <input type="range" min="10" max="100" value="10" class="workload-range-input" oninput="recalculateTelemetry(this.value)">
+            <input type="range" min="10" max="200" value="10" class="workload-range-input" oninput="recalculateTelemetry(this.value)">
         </div>
         <div class="metrics-output-row">
             <div class="metric-telemetry-box">
-                <div class="telemetry-val" id="t-lat">11.4 µs</div>
+                <div class="telemetry-val" id="t-lat">10.2 µs</div>
                 <div class="telemetry-lbl">REGISTRATION WINDOW</div>
             </div>
             <div class="metric-telemetry-box">
-                <div class="telemetry-val" id="t-ft">71.2 %</div>
+                <div class="telemetry-val" id="t-ft">70.0 %</div>
                 <div class="telemetry-lbl">HARDWARE CONSOLIDATION</div>
             </div>
             <div class="metric-telemetry-box">
-                <div class="telemetry-val" id="t-drop" style="color: var(--accent-green);">0.0000 %</div>
+                <div class="telemetry-val" id="t-drop" style="color: var(--accent-green);">100.0000 %</div>
                 <div class="telemetry-lbl">PACKET RETENTION RATE</div>
             </div>
         </div>
@@ -792,12 +793,20 @@
         }
 
         function recalculateTelemetry(val) {
-            document.getElementById('slider-txt-val').innerText = val + " Gbps LINE-RATE";
-            let baseLat = 10.2 + (val * 0.12);
-            let baseFt = 70.1 + (val * 0.049);
-            document.getElementById('t-lat').innerText = baseLat.toFixed(1) + " µs";
-            document.getElementById('t-ft').innerText = Math.min(baseFt, 75.0).toFixed(1) + " %";
-            document.getElementById('t-drop').innerText = "0.0000 %";
+            const gbps = Number(val);
+            const minGbps = 10;
+            const maxGbps = 200;
+            const minLat = 10.2;
+            const maxLat = 44.5;
+
+            document.getElementById('slider-txt-val').innerText = gbps + " Gbps LINE-RATE";
+
+            const registrationWindow = minLat + (maxLat - minLat) * (gbps - minGbps) / (maxGbps - minGbps);
+            const footprintReduction = 70.0 + (80.0 - 70.0) * (gbps - minGbps) / (maxGbps - minGbps);
+
+            document.getElementById('t-lat').innerText = registrationWindow.toFixed(1) + " µs";
+            document.getElementById('t-ft').innerText = footprintReduction.toFixed(1) + " %";
+            document.getElementById('t-drop').innerText = "100.0000 %";
         }
     </script>
 </body>
